@@ -63,7 +63,7 @@ public class DataGatherer {
 	
 	public ArrayList<Event> getEvents()
 	{
-		events = GetCalendar.get();
+		events = GetEvents.returnList();
 		return events;
 	}
 }
