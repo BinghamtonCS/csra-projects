@@ -6,7 +6,7 @@ public class Event {
 	private String content;
 	private String date;
 	
-	public Event(String title, String content, String date) {
+	public Event(String date, String title, String content) {
 		super();
 		this.title = title;
 		this.content = content;
@@ -20,6 +20,9 @@ public class Event {
 	}
 	public String getDate() {
 		return date;
+	}
+	public String print() {
+		return date+"\n"+title+"\n"+content+"\n";
 	}
 
 }
