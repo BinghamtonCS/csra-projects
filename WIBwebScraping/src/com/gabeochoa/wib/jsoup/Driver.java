@@ -102,6 +102,7 @@ public class Driver {
 				bw.write(e.getTitle());
 				bw.write("\n");
 				bw.write(e.getContent());
+				bw.write("\n");
 			}
 			
 					bw.close();
