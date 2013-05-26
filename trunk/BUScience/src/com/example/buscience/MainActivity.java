@@ -25,20 +25,7 @@ public class MainActivity extends TabActivity
 		addTab("Certification", R.drawable.icon_certification_tab, CertificationActivity.class);
 		addTab("Evaluation", R.drawable.icon_evaluation_tab, EvaluationActivity.class);
 		addTab("Contact", R.drawable.icon_contact_tab, ContactActivity.class);
-//		tabHost.addTab(tabHost.newTabSpec("tab_Home").setIndicator("Home", getResources().getDrawable(R.drawable.icon_home_tab)).setContent(new Intent(this, HomeActivity.class)));
-//		tabHost.addTab(tabHost.newTabSpec("tab_Reg").setIndicator("Registration", getResources().getDrawable(R.drawable.icon_registration_tab)).setContent(new Intent(this, RegistrationActivity.class)));
-//		tabHost.addTab(tabHost.newTabSpec("tab_Cert").setIndicator("Certification", getResources().getDrawable(R.drawable.icon_certification_tab)).setContent(new Intent(this, CertificationActivity.class)));
-//		tabHost.addTab(tabHost.newTabSpec("tab_Eval").setIndicator("Evaluation", getResources().getDrawable(R.drawable.icon_evaluation_tab)).setContent(new Intent(this, EvaluationActivity.class)));
-//		tabHost.addTab(tabHost.newTabSpec("tab_Contact").setIndicator("Contact", getResources().getDrawable(R.drawable.icon_contact_tab)).setContent(new Intent(this, ContactActivity.class)));
-//		
-//	    for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) 
-//	    {			
-//	    	View v = tabHost.getTabWidget().getChildAt(i);
-//	    	v.setPadding(0, 0, 0, 0);
-//	        TextView tv = (TextView)v.findViewById(android.R.id.title);
-//	        tv.setTextColor(Color.parseColor("#808080"));
-//	        tv.setTextSize(8.5f);
-//	    }
+
 //		getTabWidget().setStripEnabled(true);
 		tabHost.setCurrentTab(0);
 		tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundColor(Color.parseColor("#808080"));
