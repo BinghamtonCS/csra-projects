@@ -4,4 +4,785 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green1" >
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="79dp"
+            android:layout_height="46dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/pageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/pageTitle"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" 
+            android:gravity="left">
+
+            <!-- start info -->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left" >
+
+                <ImageView
+                    android:id="@+id/pic3"
+                    android:layout_width="133dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.73"
+                    android:gravity="left"
+                    android:src="@drawable/pic1" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="159dp"
+                    android:layout_weight="0.73"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/title1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title1"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/name1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name1"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <TextView
+                        android:id="@+id/major"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/majorString"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/info1_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info1_1"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/info1_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info1_2"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/info1_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info1_3"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/emailString"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/bmail1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bmail1"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left" >
+
+                <ImageView
+                    android:id="@+id/pic2"
+                    android:layout_width="133dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.73"
+                    android:gravity="left"
+                    android:src="@drawable/pic2" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="159dp"
+                    android:layout_weight="0.73"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/title2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title2"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/name2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name2"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <TextView
+                        android:id="@+id/major"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/majorString"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/info2_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info2_1"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/info2_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info2_2"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/info2_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info2_3"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/emailString"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/bmail2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bmail2"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left" >
+
+                <ImageView
+                    android:id="@+id/pic1"
+                    android:layout_width="133dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.73"
+                    android:gravity="left"
+                    android:src="@drawable/pic3" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="159dp"
+                    android:layout_weight="0.73"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/title3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title3"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/name3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name3"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <TextView
+                        android:id="@+id/major"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/majorString"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/info3_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info3_1"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/info3_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info3_2"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/info3_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info3_3"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/emailString"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/bmail3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bmail3"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left" >
+
+                <ImageView
+                    android:id="@+id/pic4"
+                    android:layout_width="133dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.73"
+                    android:src="@drawable/pic4"
+                    android:gravity="left" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="159dp"
+                    android:layout_weight="0.73"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/title4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title4"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/name4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name4"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <TextView
+                        android:id="@+id/major"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/majorString"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/info4_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info4_1"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
+                    
+                    <TextView
+                        android:id="@+id/info4_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info4_2"
+                        android:textAppearance="?android:attr/textAppearanceSmall" 
+                        android:textSize="10sp"/>
+                    
+                    <TextView
+                        android:id="@+id/info4_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info4_3"
+                        android:textAppearance="?android:attr/textAppearanceSmall" 
+                        android:textSize="10sp"/>
+
+                    <TextView
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/emailString"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/bmail4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bmail4"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left" >
+
+                <ImageView
+                    android:id="@+id/pic5"
+                    android:layout_width="133dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.73"
+                    android:src="@drawable/pic5"
+                    android:gravity="left" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="159dp"
+                    android:layout_weight="0.73"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/title5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title5"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/name5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name5"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <TextView
+                        android:id="@+id/major"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/majorString"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/info5_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info5_1"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
+                    
+                    <TextView
+                        android:id="@+id/info5_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info5_2"
+                        android:textAppearance="?android:attr/textAppearanceSmall" 
+                        android:textSize="10sp"/>
+                    
+                    <TextView
+                        android:id="@+id/info5_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info5_3"
+                        android:textAppearance="?android:attr/textAppearanceSmall" 
+                        android:textSize="10sp"/>
+
+                    <TextView
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/emailString"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/bmail5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bmail5"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left" >
+
+                <ImageView
+                    android:id="@+id/pic6"
+                    android:layout_width="133dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.73"
+                    android:src="@drawable/pic6"
+                    android:gravity="left" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="159dp"
+                    android:layout_weight="0.73"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/title6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title6"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/name6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name6"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <TextView
+                        android:id="@+id/major"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/majorString"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/info6_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info6_1"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
+                    
+                    <TextView
+                        android:id="@+id/info6_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info6_2"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
+                    
+                    <TextView
+                        android:id="@+id/info6_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info6_3"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/emailString"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/bmail6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bmail6"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left" >
+
+                <ImageView
+                    android:id="@+id/pic7"
+                    android:layout_width="133dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.73"
+                    android:src="@drawable/pic7"
+                    android:gravity="left" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="159dp"
+                    android:layout_weight="0.73"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/title7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title7"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/name7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name7"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <TextView
+                        android:id="@+id/major"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/majorString"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/info7_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info7_1"
+                        android:textAppearance="?android:attr/textAppearanceSmall" 
+                        android:textSize="10sp"/>
+                    
+                    <TextView
+                        android:id="@+id/info7_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info7_2"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
+                    
+                    <TextView
+                        android:id="@+id/info7_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info7_3"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/emailString"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/bmail7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bmail7"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left" >
+
+                <ImageView
+                    android:id="@+id/pic8"
+                    android:layout_width="133dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.73"
+                    android:src="@drawable/pic8"
+                    android:gravity="left" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="159dp"
+                    android:layout_weight="0.73"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/title8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title8"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/name8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name8"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <TextView
+                        android:id="@+id/major"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/majorString"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/info8_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info8_1"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
+                    
+                    <TextView
+                        android:id="@+id/info8_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info8_2"
+                        android:textAppearance="?android:attr/textAppearanceSmall" 
+                        android:textSize="10sp"/>
+                    
+                    <TextView
+                        android:id="@+id/info8_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info8_3"
+                        android:textAppearance="?android:attr/textAppearanceSmall" 
+                        android:textSize="10sp"/>
+
+                    <TextView
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/emailString"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/bmail8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bmail8"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left" >
+
+                <ImageView
+                    android:id="@+id/pic9"
+                    android:layout_width="133dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.73"
+                    android:src="@drawable/pic9" 
+                    android:gravity="left"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="159dp"
+                    android:layout_weight="0.73"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/title9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title9"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/name9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name9"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <TextView
+                        android:id="@+id/major"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/majorString"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/info9_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info9_1"
+                        android:textAppearance="?android:attr/textAppearanceSmall" 
+                        android:textSize="10sp"/>
+                    
+                    <TextView
+                        android:id="@+id/info9_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info9_2"
+                        android:textAppearance="?android:attr/textAppearanceSmall" 
+                        android:textSize="10sp"/>
+                    
+                    <TextView
+                        android:id="@+id/info9_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/info9_3"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/emailString"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/green1" />
+
+                    <TextView
+                        android:id="@+id/bmail9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bmail9"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </LinearLayout>
+                <!-- end info -->
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>
