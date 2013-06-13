@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">My First App</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="logoimage">wib</string>
+    <string name="buttonAboutUs">About Us</string>
+    <string name="buttonMembers">Members</string>
+    <string name="buttonFacebook">Facebook</string>
+    <string name="buttonEvents">Events</string>
+    <string name="buttonCommitees">Commitees</string>
+    <string name="buttonRecruitment">Recruitment</string>
+
+</resources>

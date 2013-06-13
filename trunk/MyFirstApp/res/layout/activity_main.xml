@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/purplebackgound"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:contentDescription="@string/logoimage"
+        android:scaleType="fitStart"
+        android:src="@drawable/wiblogo" />
+
+    <Gallery
+        android:id="@+id/gallery1"
+        android:layout_width="237dp"
+        android:layout_height="154dp"
+        android:gravity="center_horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:showDividers="none" >
+
+        <Button
+            android:id="@+id/button1"
+            style="@style/AppTheme"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="50dp"
+            android:textSize="12sp"
+            android:typeface="sans"
+            android:text="@string/buttonAboutUs" />
+
+        <Button
+            android:id="@+id/button2"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="50dp"
+            android:textSize="12sp"
+            android:typeface="sans"
+            android:text="@string/buttonMembers" />
+
+        <Button
+            android:id="@+id/button3"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:textSize="12sp"
+            android:typeface="sans"
+            android:text="@string/buttonEvents" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" >
+
+        <Button
+            android:id="@+id/button4"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="30dp"
+            android:textSize="12sp"
+            android:typeface="sans"
+            android:text="@string/buttonCommitees" />
+
+        <Button
+            android:id="@+id/button5"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="30dp"
+            android:textSize="12sp"
+            android:typeface="sans"
+            android:text="@string/buttonRecruitment" />
+
+        <Button
+            android:id="@+id/button6"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/buttonFacebook"
+            android:textSize="12sp"
+            android:typeface="sans" />
+
+    </LinearLayout>
+</LinearLayout>
