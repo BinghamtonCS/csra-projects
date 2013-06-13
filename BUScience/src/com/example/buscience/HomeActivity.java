@@ -11,7 +11,6 @@ public class HomeActivity extends Activity
     private static final int SWIPE_MIN_DISTANCE = 120;
     private static final int SWIPE_MAX_OFF_PATH = 100;
     private static final int SWIPE_THRESHOLD_VELOCITY = 100;
-    private GestureDetector myGestureDetector;
 	
     public void onCreate(Bundle savedInstanceState) 
     {
@@ -32,9 +31,9 @@ public class HomeActivity extends Activity
             image.setBackgroundResource(slideImgs[i]);
             flipper.addView(image);
         }        
-        //flipper.startFlipping();
+        flipper.startFlipping();
 
-        myGestureDetector = new GestureDetector(new MySwipeDetector());
+        final GestureDetector myGestureDetector = new GestureDetector(this, new MySwipeDetector());
         flipper.setOnTouchListener(new View.OnTouchListener() 
         {
 			@Override
