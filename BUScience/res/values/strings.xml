@@ -67,5 +67,7 @@
     <string name="info9_2">Harpur School of Liberal Arts</string>
     <string name="info9_3">BSc, Integrative Neuroscience</string>
     <string name="bmail9">jvayalu1@binghamton.edu</string>
+    <string name="about_us"><u>About Us\t</u> </string>
+    <string name="join_us"><u>\tJoin Us</u></string>
 
 </resources>

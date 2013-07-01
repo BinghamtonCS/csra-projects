@@ -10,13 +10,21 @@ import android.widget.*;
 public class MainActivity extends TabActivity
 	implements TabHost.OnTabChangeListener
 {
-	private TabHost tabHost;
+	private static TabHost tabHost;
+	private static TextView titleText;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
+		
+		boolean requestPassed = requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		setContentView(R.layout.activity_main);
+		if (requestPassed) {
+			getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_bar_layout);
+			titleText = ((TextView)findViewById(R.id.titleHeading));
+			titleText.setText("Home");
+		}
 		
 		tabHost = (TabHost)findViewById(android.R.id.tabhost);	
 
@@ -45,6 +53,9 @@ public class MainActivity extends TabActivity
 		return true;
 	}
 	
+	public static TabHost getCurrentTabHost()
+	{	return tabHost;		}
+	
 	private void addTab(String label, int drawableId, Class<?> cls)
 	{
 		Intent intent = new Intent(this, cls);
@@ -67,5 +78,24 @@ public class MainActivity extends TabActivity
 	        tabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#000000")); //unselected
 	    }
 	    tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundColor(Color.parseColor("#808080")); // selected
+	    
+	    switch(tabHost.getCurrentTab()) 
+	    {
+	    	case 0:
+	    		titleText.setText("Home");
+	    		break;
+	    	case 1:
+	    		titleText.setText("Registration");
+	    		break;
+	    	case 2:
+	    		titleText.setText("Certification");
+	    		break;
+	    	case 3:
+	    		titleText.setText("Evaluation");
+	    		break;
+	    	case 4:
+	    		titleText.setText("Contact");
+	    		break;
+	    }
 	}
 }

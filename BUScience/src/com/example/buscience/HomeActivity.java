@@ -15,6 +15,7 @@ public class HomeActivity extends Activity
     public void onCreate(Bundle savedInstanceState) 
     {
         super.onCreate(savedInstanceState);
+        
         setContentView(R.layout.home_layout);
         Display display = getWindowManager().getDefaultDisplay();
         
@@ -52,6 +53,15 @@ public class HomeActivity extends Activity
 //            	flipper.startFlipping();
 //            }
 //        });
+        
+        TextView txtJoinUs = (TextView)findViewById(R.id.joinUs);
+        txtJoinUs.setOnClickListener(new OnClickListener()
+        {
+			public void onClick(View v) 
+			{
+				MainActivity.getCurrentTabHost().setCurrentTab(1);
+			}
+        });
     }
     
     class MySwipeDetector extends GestureDetector.SimpleOnGestureListener
