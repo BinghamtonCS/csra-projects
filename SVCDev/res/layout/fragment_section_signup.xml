@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:orientation="horizontal">
+	    <ImageButton
+	        android:id="@+id/ibRefreshSU"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:src="@drawable/refresh" />
+
+	    <TextView
+	        android:id="@+id/tTimeUpdatedSU"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Most Recent Update Attempt: "
+	        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+	</LinearLayout>
+	
+    <WebView
+        android:id="@+id/wvSignUpPage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+</LinearLayout>

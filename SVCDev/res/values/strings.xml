@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SVCDev</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="cover_flow">coverflow</string>
+    <string name="demo_collection">try going to an Activity</string>
+    <string name="demo_external_activity">Or try an external activity?</string>
+
+</resources>
