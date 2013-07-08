@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Welcome to BU Science"
+            android:textColor="@color/green1"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="BU Science is a Binghamton University Club in which our student teachers teach science and engineering concepts to elementary school students. We teach half an hour lessons once a week at George F. Johnson and Charles F. Johnson Elementary Schools in the Union-Endicott School district. We hold weekly meetings in which we teach our student teachers the lesson for the week and distribute supplies. Students teach in groups of three to five student teachers and travel to the school together via car."
+            android:textSize="16sp" />
+        
+       <TextView
+            android:id="@+id/textView3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Benefits of Joining"
+            android:textColor="@color/green1"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Students who participate in BU Science will be given the opportunity to make a positive impact in the local community, gain valuable public speaking and teaching experience, and make new friends."
+            android:textSize="16sp" />
+        
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Want to Support Us?"
+            android:textColor="@color/green1"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="You can donate to BU Science by contacting the organization's email."
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</ScrollView>

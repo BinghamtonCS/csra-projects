@@ -11,14 +11,18 @@ public class HomeActivity extends Activity
     private static final int SWIPE_MIN_DISTANCE = 120;
     private static final int SWIPE_MAX_OFF_PATH = 100;
     private static final int SWIPE_THRESHOLD_VELOCITY = 100;
-	
+
     public void onCreate(Bundle savedInstanceState) 
     {
         super.onCreate(savedInstanceState);
         
         setContentView(R.layout.home_layout);
-        Display display = getWindowManager().getDefaultDisplay();
-        
+        recreateView();
+    }
+    
+    private void recreateView()
+    {
+    	Display display = getWindowManager().getDefaultDisplay();
         int[] slideImgs = {R.drawable.img001, R.drawable.img002, R.drawable.img003,
         		R.drawable.img004, R.drawable.img005, R.drawable.img006,
         		R.drawable.img007, R.drawable.img008, R.drawable.img009};
@@ -43,16 +47,36 @@ public class HomeActivity extends Activity
 			}
 		});
         
-//        flipper.setOnClickListener(new OnClickListener() 
-//        {
-//            public void onClick(View v) 
-//            {
-//            	ViewFlipper flipper = ((ViewFlipper)findViewById(R.id.viewFlipper1));
-//            	flipper.stopFlipping();
-//            	flipper.showNext();
-//            	flipper.startFlipping();
-//            }
-//        });
+//      flipper.setOnClickListener(new OnClickListener() 
+//      {
+//          public void onClick(View v) 
+//          {
+//          	ViewFlipper flipper = ((ViewFlipper)findViewById(R.id.viewFlipper1));
+//          	flipper.stopFlipping();
+//          	flipper.showNext();
+//          	flipper.startFlipping();
+//          }
+//      });
+        
+        TextView txtAboutUs = (TextView)findViewById(R.id.aboutUs);
+        txtAboutUs.setOnClickListener(new OnClickListener()
+        {
+        	public void onClick(View v) {
+        		setContentView(R.layout.about_us_layout);
+        		MainActivity.setTitle("About Us");
+        		Button backButton = MainActivity.getBackButton();
+        		backButton.setVisibility(View.VISIBLE);
+        		backButton.setOnClickListener(new OnClickListener()
+        		{
+        			public void onClick(View v) {
+                		setContentView(R.layout.home_layout);
+                        recreateView();
+                		MainActivity.setTitle("Home");                		
+        				v.setVisibility(View.GONE);
+        			}
+        		});
+			}
+        });
         
         TextView txtJoinUs = (TextView)findViewById(R.id.joinUs);
         txtJoinUs.setOnClickListener(new OnClickListener()
