@@ -12,6 +12,8 @@ public class MainActivity extends TabActivity
 {
 	private static TabHost tabHost;
 	private static TextView titleText;
+	private static Button backButton;
+	private static Window mainWin;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -21,8 +23,11 @@ public class MainActivity extends TabActivity
 		boolean requestPassed = requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		setContentView(R.layout.activity_main);
 		if (requestPassed) {
-			getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_bar_layout);
-			titleText = ((TextView)findViewById(R.id.titleHeading));
+			mainWin = getWindow();
+			mainWin.setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_bar_layout);
+			backButton = ((Button)findViewById(R.id.button1));
+			backButton.setVisibility(View.GONE);
+			titleText = ((TextView)findViewById(R.id.titleHeading1));
 			titleText.setText("Home");
 		}
 		
@@ -56,6 +61,15 @@ public class MainActivity extends TabActivity
 	public static TabHost getCurrentTabHost()
 	{	return tabHost;		}
 	
+	public static Window getMainWindow()
+	{	return mainWin;		}
+	
+	public static Button getBackButton()
+	{	return backButton;	}
+	
+	public static void setTitle(String title)
+	{	titleText.setText(title);	}
+	
 	private void addTab(String label, int drawableId, Class<?> cls)
 	{
 		Intent intent = new Intent(this, cls);
@@ -86,15 +100,19 @@ public class MainActivity extends TabActivity
 	    		break;
 	    	case 1:
 	    		titleText.setText("Registration");
+				backButton.setVisibility(View.GONE);
 	    		break;
 	    	case 2:
 	    		titleText.setText("Certification");
+				backButton.setVisibility(View.GONE);
 	    		break;
 	    	case 3:
 	    		titleText.setText("Evaluation");
+				backButton.setVisibility(View.GONE);
 	    		break;
 	    	case 4:
 	    		titleText.setText("Contact");
+				backButton.setVisibility(View.GONE);
 	    		break;
 	    }
 	}
