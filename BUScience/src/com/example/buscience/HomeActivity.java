@@ -1,6 +1,7 @@
 package com.example.buscience;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.*;
 import android.view.View.OnClickListener;
@@ -57,35 +58,31 @@ public class HomeActivity extends Activity
 //          	flipper.startFlipping();
 //          }
 //      });
-        
-        TextView txtAboutUs = (TextView)findViewById(R.id.aboutUs);
-        txtAboutUs.setOnClickListener(new OnClickListener()
-        {
-        	public void onClick(View v) {
-        		setContentView(R.layout.about_us_layout);
-        		MainActivity.setTitle("About Us");
-        		Button backButton = MainActivity.getBackButton();
-        		backButton.setVisibility(View.VISIBLE);
-        		backButton.setOnClickListener(new OnClickListener()
-        		{
-        			public void onClick(View v) {
-                		setContentView(R.layout.home_layout);
-                        recreateView();
-                		MainActivity.setTitle("Home");                		
-        				v.setVisibility(View.GONE);
-        			}
-        		});
+    }
+    
+    public void aboutUsClicked(View view) 
+    {
+    	setContentView(R.layout.about_us_layout);
+		MainActivity.setTitle("About Us");
+		Button backButton = MainActivity.getBackButton();
+		backButton.setVisibility(View.VISIBLE);
+		backButton.setOnClickListener(new OnClickListener()
+		{
+			public void onClick(View v) {
+        		setContentView(R.layout.home_layout);
+                recreateView();
+        		MainActivity.setTitle("Home");                		
+				v.setVisibility(View.GONE);
 			}
-        });
-        
-        TextView txtJoinUs = (TextView)findViewById(R.id.joinUs);
-        txtJoinUs.setOnClickListener(new OnClickListener()
-        {
-			public void onClick(View v) 
-			{
-				MainActivity.getCurrentTabHost().setCurrentTab(1);
-			}
-        });
+		});
+    }
+    
+    public void goToFacebook(View view) {
+    	startActivity(new Intent(this, FacebookActivity.class));
+    }
+    
+    public void joinUsClicked(View view) {
+    	MainActivity.getCurrentTabHost().setCurrentTab(1);
     }
     
     class MySwipeDetector extends GestureDetector.SimpleOnGestureListener
