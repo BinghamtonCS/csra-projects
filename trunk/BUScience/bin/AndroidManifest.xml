@@ -8,6 +8,8 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -41,6 +43,10 @@
         <activity
             android:name="com.example.buscience.ContactActivity"
             android:label="@string/title_activity_contact" >
+        </activity>
+        <activity
+            android:name="com.example.buscience.FacebookActivity"
+            android:label="@string/title_activity_facebook" >
         </activity>
     </application>
 

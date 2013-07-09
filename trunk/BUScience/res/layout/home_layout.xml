@@ -65,13 +65,15 @@
                 android:padding="15dp"
                 android:text="@string/about_us"
                 android:textColor="@color/blue"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:onClick="aboutUsClicked" />
 
             <ImageButton
                 android:id="@+id/imageButton1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="0dp"
+                android:onClick="goToFacebook"
                 android:src="@drawable/ic_facebook" />
 
             <TextView
@@ -85,7 +87,8 @@
                 android:padding="15dp"
                 android:text="@string/join_us"
                 android:textColor="@color/blue"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:onClick="joinUsClicked" />
         </LinearLayout>
 
     </LinearLayout>
