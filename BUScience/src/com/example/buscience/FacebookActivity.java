@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -23,7 +24,7 @@ public class FacebookActivity extends Activity
 			((TextView)findViewById(R.id.titleHeading1)).setText("Facebook");
 		}
 		
-		WebView browser = (WebView)findViewById(R.id.webView1);
+		final WebView browser = (WebView)findViewById(R.id.webView1);
 		browser.setWebViewClient(new WebViewClient() {
 	        public boolean shouldOverrideUrlLoading(WebView view, String url) {
 	            return false;
@@ -31,5 +32,19 @@ public class FacebookActivity extends Activity
 	    });
 		browser.getSettings().setJavaScriptEnabled(true);
 		browser.loadUrl("https://www.facebook.com/bu.scyence");
+		
+		((Button)findViewById(R.id.btnBack)).setOnClickListener(new OnClickListener()
+		{
+			public void onClick(View v) {
+				onBackPressed();
+			}
+		});
+	
+		((Button)findViewById(R.id.btnReload)).setOnClickListener(new OnClickListener()
+		{
+			public void onClick(View v) {
+				browser.loadUrl("https://www.facebook.com/bu.scyence");
+			}
+		});
 	}
 }
