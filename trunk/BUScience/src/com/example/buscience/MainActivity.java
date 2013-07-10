@@ -13,7 +13,7 @@ public class MainActivity extends TabActivity
 	private static TabHost tabHost;
 	private static TextView titleText;
 	private static Button backButton;
-	private static Window mainWin;
+	private static Button clearButton;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -23,10 +23,11 @@ public class MainActivity extends TabActivity
 		boolean requestPassed = requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		setContentView(R.layout.activity_main);
 		if (requestPassed) {
-			mainWin = getWindow();
-			mainWin.setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_bar_layout);
-			backButton = ((Button)findViewById(R.id.button1));
+			getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_bar_layout);
+			backButton = ((Button)findViewById(R.id.btnBack));
 			backButton.setVisibility(View.GONE);
+			clearButton = ((Button)findViewById(R.id.btnReload));
+			clearButton.setVisibility(View.GONE);
 			titleText = ((TextView)findViewById(R.id.titleHeading1));
 			titleText.setText("Home");
 		}
@@ -60,9 +61,6 @@ public class MainActivity extends TabActivity
 	
 	public static TabHost getCurrentTabHost()
 	{	return tabHost;		}
-	
-	public static Window getMainWindow()
-	{	return mainWin;		}
 	
 	public static Button getBackButton()
 	{	return backButton;	}
