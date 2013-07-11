@@ -1,8 +1,7 @@
-package com.example.svcdev;
+package Fragments;
 
 import java.io.InputStream;
 import java.net.URL;
-import java.util.Calendar;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,10 +13,13 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import com.example.svcdev.R;
 
 public class LaunchpadSectionFragment extends Fragment {
 	
@@ -33,8 +35,8 @@ public class LaunchpadSectionFragment extends Fragment {
 	Bitmap bmp4;
 	Bitmap bmp5;
 	Bitmap bmp6;
-	ImageButton goFB;
-	ImageButton goTwit;
+	WebView twitterBrowser;
+	WebView facebookBrowser;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -46,25 +48,29 @@ public class LaunchpadSectionFragment extends Fragment {
 		showMeTheMoney4 = (ImageView) rootView.findViewById(R.id.iv4);
 		showMeTheMoney5 = (ImageView) rootView.findViewById(R.id.iv5);
 		showMeTheMoney6 = (ImageView) rootView.findViewById(R.id.iv6);
-		goFB = (ImageButton) rootView.findViewById(R.id.ibFacebook);
-		goTwit = (ImageButton) rootView.findViewById(R.id.ibTwitter);
-		goFB.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Intent i = getOpenFacebookIntent(rootView.getContext());
-				startActivity(i);
-			}
-		});
-		goTwit.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Intent i = getOpenTwitterIntent(rootView.getContext());
-				startActivity(i);
-			}
-		});
+		
 		new DownloadImageTask().execute("https://dl.dropboxusercontent.com/u/93134791/SVC%20Images/1.jpg");
+		twitterBrowser = (WebView) rootView.findViewById(R.id.wvTwitter);
+		twitterBrowser.setWebViewClient(new WebViewClient()       
+    {
+         @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) 
+        {
+            return false;
+        }
+    });
+		twitterBrowser.loadUrl("https://mobile.twitter.com/BinghamtonSVC");
+		
+		facebookBrowser = (WebView) rootView.findViewById(R.id.wvFacebook);
+		facebookBrowser.setWebViewClient(new WebViewClient()       
+    {
+         @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) 
+        {
+            return false;
+        }
+    });
+		facebookBrowser.loadUrl("https://www.facebook.com/binghamtonsvc?filter=1");
 		return rootView;
 	}
 	

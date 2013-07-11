@@ -1,4 +1,4 @@
-package com.example.svcdev;
+package Parsers;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -9,7 +9,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
-public class GetMembershipInfo {
+public class GetEmails {
 	
 	public String getInternetData() throws Exception{
 		BufferedReader in = null;
@@ -25,29 +25,25 @@ public class GetMembershipInfo {
 			String l = "";
 			String nl = System.getProperty("line.separator");
 			boolean start = false;
-			while ((l = in.readLine()) !=null) {
-				if (l.contains(">Membership"))
+			while ((l = in.readLine()) !=null){
+				if (l.contains("Executive Board</span>"))
 				{
 					start = true;
-					l = in.readLine();
 				}
 				if (start)
 				{	
-					if (l.contains("<br /></div>"))
+					if (l.contains("div class"))
 					{
 						start = false;
 					}
-					else
-					{
-						sb.append(l + nl);
-					}
+					sb.append(l + nl);
 				}
 			}
 			in.close();
-			sb.insert(0, "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">" + nl + "<html>" + nl);
-			sb.append("</html>");
 			data = sb.toString();
+			data.replaceAll("\\<.*?>","");	
 			return data;
+			
 		} finally {
 			if (in != null) {
 				try {
@@ -59,4 +55,7 @@ public class GetMembershipInfo {
 			}
 		}
 	}
+	
+	
+
 }
