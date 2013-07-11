@@ -1,5 +1,7 @@
-package com.example.svcdev;
+package Fragments;
 
+import com.example.svcdev.MyAdapter;
+import com.example.svcdev.R;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

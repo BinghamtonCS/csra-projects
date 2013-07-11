@@ -1,5 +1,8 @@
-package com.example.svcdev;
+package Fragments;
 
+import com.example.svcdev.R;
+
+import Parsers.GetEBoard;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.app.Fragment;

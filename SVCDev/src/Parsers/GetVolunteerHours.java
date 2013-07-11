@@ -1,4 +1,4 @@
-package com.example.svcdev;
+package Parsers;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -6,10 +6,10 @@ import java.net.URI;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
 
-public class GetMissionStatement {
+public class GetVolunteerHours {
 
 	public String getInternetData() throws Exception{
 		BufferedReader in = null;
@@ -26,7 +26,7 @@ public class GetMissionStatement {
 			String nl = System.getProperty("line.separator");
 			boolean start = false;
 			while ((l = in.readLine()) !=null) {
-				if (l.contains(">Mission Statement"))
+				if (l.contains("Hours</span>"))
 				{
 					start = true;
 					l = in.readLine();
@@ -60,6 +60,3 @@ public class GetMissionStatement {
 		}
 	}
 }
-			
-			
-			

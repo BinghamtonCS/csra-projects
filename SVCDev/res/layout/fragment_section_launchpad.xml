@@ -46,23 +46,26 @@
 	
 	</HorizontalScrollView>
 
-	<TextView
-	    android:id="@+id/tvHttp"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:text="TextView" />
-
-	<ImageButton
-	    android:id="@+id/ibFacebook"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:src="@drawable/facebook" 
-	    />
-
-	<ImageButton
-	    android:id="@+id/ibTwitter"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:src="@drawable/twitter" />
+	<LinearLayout
+	    android:layout_height="fill_parent"
+	    android:layout_width="fill_parent"
+	    android:orientation="horizontal"
+	    >
+	    
+	    <WebView
+	        android:id="@+id/wvTwitter"
+	      	android:layout_width="fill_parent"
+	      	android:layout_height="fill_parent"
+	      	android:layout_weight="1"
+	        />
+	    
+	    <WebView
+	        android:id="@+id/wvFacebook"
+	      	android:layout_width="fill_parent"
+	      	android:layout_height="fill_parent"
+	      	android:layout_weight="1"
+	        />
+	    
+	</LinearLayout>
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.svcdev;
+package Parsers;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -6,11 +6,11 @@ import java.net.URI;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.client.methods.HttpGet;
 
-public class GetEBoard {
-	
+public class GetMissionStatement {
+
 	public String getInternetData() throws Exception{
 		BufferedReader in = null;
 		String data = null;
@@ -25,25 +25,28 @@ public class GetEBoard {
 			String l = "";
 			String nl = System.getProperty("line.separator");
 			boolean start = false;
-			while ((l = in.readLine()) !=null){
-				if (l.contains("Executive Board</span>"))
+			while ((l = in.readLine()) !=null) {
+				if (l.contains(">Mission Statement"))
 				{
 					start = true;
+					l = in.readLine();
 				}
 				if (start)
 				{	
-					if (l.contains("div class"))
+					if (l.contains("<br /></div>"))
 					{
 						start = false;
 					}
-					sb.append(l + nl);
+					else
+					{
+						sb.append(l + nl);
+					}
 				}
 			}
 			in.close();
 			sb.insert(0, "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">" + nl + "<html>" + nl);
 			sb.append("</html>");
 			data = sb.toString();
-			
 			return data;
 		} finally {
 			if (in != null) {
@@ -56,5 +59,7 @@ public class GetEBoard {
 			}
 		}
 	}
-
 }
+			
+			
+			
