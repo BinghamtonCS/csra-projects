@@ -71,5 +71,6 @@
     <string name="join_us"><u>\tJoin Us</u></string>
     <string name="title_activity_facebook">FacebookActivity</string>
     <string name="evaluation_page_title">Student/Teacher Evaluation</string>
+    <string name="certification_page_title">Certification</string>
 
 </resources>
