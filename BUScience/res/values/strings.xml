@@ -70,5 +70,6 @@
     <string name="about_us"><u>About Us\t</u></string>
     <string name="join_us"><u>\tJoin Us</u></string>
     <string name="title_activity_facebook">FacebookActivity</string>
+    <string name="evaluation_page_title">Student/Teacher Evaluation</string>
 
 </resources>
