@@ -70,6 +70,9 @@
     <string name="about_us"><u>About Us\t</u></string>
     <string name="join_us"><u>\tJoin Us</u></string>
     <string name="title_activity_facebook">FacebookActivity</string>
+    <string name="elementary"> &#8226; Elementary School Teacher</string>
+    <string name="university"> &#8226; University Student Teacher</string>
+    <string name="tabling"> &#8226; Tabling</string>
     <string name="evaluation_page_title">Student/Teacher Evaluation</string>
     <string name="certification_page_title">Certification</string>
 
