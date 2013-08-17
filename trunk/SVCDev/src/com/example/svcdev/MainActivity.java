@@ -15,6 +15,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
+import android.view.MenuItem;
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
 	
@@ -52,8 +53,22 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+        return true; 
     }
+    
+    @Override
+  	public boolean onOptionsItemSelected(MenuItem item) {
+  		// TODO Auto-generated method stub
+  		switch (item.getItemId()) {
+  		case R.id.itemRefresh:
+  			//do something when this button is pressed
+  			return true;
+  		default: 
+  			return true;
+  		}	
+  		
+  	}
+  	
 
 
 	@Override
