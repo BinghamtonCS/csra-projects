@@ -9,6 +9,6 @@
         android:id="@+id/itemRefresh"
         android:icon="@drawable/refresh"
         android:showAsAction="ifRoom|withText"
-        android:title="Refresh"/>
+        android:title=" Refresh"/>
 
 </menu>
