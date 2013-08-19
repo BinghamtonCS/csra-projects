@@ -57,6 +57,8 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
+            android:clickable="true"
+            android:onClick="schoolTeacherClicked"
             android:text="@string/elementary"
             android:textColor="@color/blue"
             android:textSize="18sp" />
@@ -68,6 +70,8 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
+            android:clickable="true"
+            android:onClick="universityTeacherClicked"
             android:text="@string/university"
             android:textColor="@color/blue"
             android:textSize="18sp" />
@@ -79,6 +83,8 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
+            android:clickable="true"
+            android:onClick="tablingClicked"
             android:text="@string/tabling"
             android:textColor="@color/blue"
             android:textSize="18sp" />
