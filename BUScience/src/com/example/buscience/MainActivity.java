@@ -65,6 +65,9 @@ public class MainActivity extends TabActivity
 	public static Button getBackButton()
 	{	return backButton;	}
 	
+	public static Button getClearButton()
+	{	return clearButton;	}
+	
 	public static void setTitle(String title)
 	{	titleText.setText(title);	}
 	
