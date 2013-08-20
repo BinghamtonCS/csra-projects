@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
@@ -25,7 +26,9 @@ public class RegistrationActivity extends Activity
 	
 		final WebView browserTimeSlot = (WebView)findViewById(R.id.schoolTimeSlot);
 		browserTimeSlot.setWebViewClient(new WebViewClient());
+		browserTimeSlot.getSettings().setUserAgentString("Mozilla/5.0");
 		browserTimeSlot.getSettings().setJavaScriptEnabled(true);
+		browserTimeSlot.setInitialScale(165);
 		browserTimeSlot.loadUrl("https://spreadsheets.google.com/spreadsheet/ccc?chrome=false&key=0AphPhvpO0nOPdDRHNnVneW5NTjdzSzdJVTYxWndoSXc&output=html&pubredirect=true&widget=true");
 
 		final Button clearButton = MainActivity.getClearButton();
