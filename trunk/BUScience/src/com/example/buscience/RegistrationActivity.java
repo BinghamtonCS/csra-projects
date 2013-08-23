@@ -30,36 +30,31 @@ public class RegistrationActivity extends Activity
     {
     	setContentView(R.layout.school_teacher_layout);
 		MainActivity.setTitle("School-Teacher Sign-Up");
-	
+		
+		schoolTabs = (TabHost)findViewById(R.id.schoolTabs);
+		schoolTabs.setup();
+		addTab(schoolTabs, "Time-Slot", R.id.tabSchoolTimeSlot);
+		addTab(schoolTabs, "Sign-Up", R.id.tabSchoolSignUp);
+		addTab(schoolTabs, "Schedule Change", R.id.tabSchoolUpdate);
+		
+		setTabBackground(schoolTabs.getCurrentTab());
+		schoolTabs.setOnTabChangedListener(this);
+
 		final WebView browserTimeSlot = (WebView)findViewById(R.id.schoolTimeSlot);
 		browserTimeSlot.setWebViewClient(new WebViewClient());
 		browserTimeSlot.getSettings().setUserAgentString("Mozilla/5.0");
 		browserTimeSlot.getSettings().setJavaScriptEnabled(true);
 		browserTimeSlot.setInitialScale(165);
 		browserTimeSlot.loadUrl("https://spreadsheets.google.com/spreadsheet/ccc?chrome=false&key=0AphPhvpO0nOPdDRHNnVneW5NTjdzSzdJVTYxWndoSXc&output=html&pubredirect=true&widget=true");
-
-		schoolTabs = (TabHost)findViewById(R.id.schoolTabs);
-		schoolTabs.setup();
-		addTab(schoolTabs, "Sign-Up", R.id.tabSchoolSignUp);
-		addTab(schoolTabs, "Schedule Change", R.id.tabSchoolUpdate);
-		
-		setTabBackground(schoolTabs.getCurrentTab());
-		schoolTabs.setOnTabChangedListener(this);
 		
 		final WebView browserSchoolSignUp = (WebView)findViewById(R.id.schoolSignUp);
 		browserSchoolSignUp.setWebViewClient(new WebViewClient());
-		browserSchoolSignUp.getSettings().setBuiltInZoomControls(true);
-		browserSchoolSignUp.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
-		browserSchoolSignUp.setScrollbarFadingEnabled(false);
 		browserSchoolSignUp.getSettings().setJavaScriptEnabled(true);
 		browserSchoolSignUp.setInitialScale(165);
 		browserSchoolSignUp.loadUrl("https://docs.google.com/spreadsheet/embeddedform?bc=transparent&f=%2522Georgia%2522%252C%2Bserif&formkey=dHI3Ym94WXFFUmJfdE9HSUdQSENzenc6MQ&hl=en&htc=%2523666666&lc=%2523135355&pli=1&tc=%2523565555&ttl=0");
 		
 		final WebView browserSchoolUpdate = (WebView)findViewById(R.id.schoolUpdate);
 		browserSchoolUpdate.setWebViewClient(new WebViewClient());
-		browserSchoolSignUp.getSettings().setBuiltInZoomControls(true);
-		browserSchoolSignUp.setScrollBarStyle(WebView.SCROLLBARS_INSIDE_OVERLAY);
-		browserSchoolSignUp.setScrollbarFadingEnabled(false);
 		browserSchoolUpdate.getSettings().setJavaScriptEnabled(true);
 		browserSchoolUpdate.setInitialScale(165);
 		browserSchoolUpdate.loadUrl("https://docs.google.com/spreadsheet/embeddedform?bc=transparent&f=%2522Georgia%2522%252C%2Bserif&formkey=dDQ3Tk5PcjNYX1plb1RSbnVhOWh2bUE6MQ&hl=en&htc=%2523666666&lc=%2523135355&pli=1&tc=%2523565555&ttl=0");
