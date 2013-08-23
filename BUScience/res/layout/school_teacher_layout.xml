@@ -1,79 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ScrollView1"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
 
-    <LinearLayout
+    <TabHost
+        android:id="@+id/schoolTabs"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-        
-	    <TextView
-	        android:id="@+id/schoolTitle"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_marginBottom="10dp"
-	        android:layout_marginTop="10dp"
-	        android:gravity="center"
-	        android:text="Time-Slot Week Schedule"
-	        android:textColor="@color/green1"
-	        android:textSize="24sp"
-	        android:textStyle="bold" />
-	
-	    <WebView
-	        android:id="@+id/schoolTimeSlot"
-	        android:layout_width="match_parent"
-	        android:layout_height="350dp" >
-	    </WebView>
-	
-	    <TabHost
-	        android:id="@+id/schoolTabs"
-	        android:layout_width="match_parent"
-	        android:layout_height="392dp" >
-	
-	        <LinearLayout
-	            android:layout_width="match_parent"
-	            android:layout_height="match_parent"
-	            android:orientation="vertical" >
-	
-	            <TabWidget
-	                android:id="@android:id/tabs"
-	                android:layout_width="match_parent"
-	                android:layout_height="wrap_content" >
-	            </TabWidget>
-	
-	            <FrameLayout
-	                android:id="@android:id/tabcontent"
-	                android:layout_width="match_parent"
-	                android:layout_height="match_parent" >
-	
-	                <LinearLayout
-	                    android:id="@+id/tabSchoolSignUp"
-	                    android:layout_width="match_parent"
-	                    android:layout_height="match_parent" >
-	
-	                    <WebView
-	                        android:id="@+id/schoolSignUp"
-	                        android:layout_width="match_parent"
-	                        android:layout_height="match_parent"
-	                        android:scrollbarStyle="outsideOverlay" />
+        android:layout_height="match_parent" >
 
-	                </LinearLayout>
-	
-	                <LinearLayout
-	                    android:id="@+id/tabSchoolUpdate"
-	                    android:layout_width="match_parent"
-	                    android:layout_height="match_parent" >
-	
-	                    <WebView
-	                        android:id="@+id/schoolUpdate"
-	                        android:layout_width="match_parent"
-	                        android:layout_height="match_parent"
-	                        android:scrollbarStyle="outsideOverlay" />
-	                </LinearLayout>
-	            </FrameLayout>
-	        </LinearLayout>
-	    </TabHost>
-	</LinearLayout>
-</ScrollView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:id="@+id/tabSchoolSignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <WebView
+                        android:id="@+id/schoolSignUp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbarStyle="outsideOverlay" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tabSchoolUpdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <WebView
+                        android:id="@+id/schoolUpdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbarStyle="outsideOverlay" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tabSchoolTimeSlot"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <WebView
+                        android:id="@+id/schoolTimeSlot"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</LinearLayout>
