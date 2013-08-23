@@ -88,8 +88,7 @@ public class MainActivity extends TabActivity
 
 	private void setTabBackground()
 	{
-		for(int i = 0; i < tabHost.getTabWidget().getChildCount();i++)
-	    {
+		for(int i = 0; i < tabHost.getTabWidget().getChildCount();i++) {
 	        tabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#000000")); //unselected
 	    }
 	    tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundColor(Color.parseColor("#808080")); // selected
