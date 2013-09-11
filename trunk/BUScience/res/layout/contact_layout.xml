@@ -4,6 +4,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <WebView
+        android:id="@+id/eboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarStyle="outsideOverlay" />
+
+</LinearLayout>
+<!--
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,7 +42,6 @@
             android:orientation="vertical" 
             android:gravity="left">
 
-            <!-- start info -->
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -789,9 +796,8 @@
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:autoLink="email" />
                 </LinearLayout>
-                <!-- end info -->
+             
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
-
-</LinearLayout>
+   </ScrollView>
+-->
