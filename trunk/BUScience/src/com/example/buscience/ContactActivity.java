@@ -21,8 +21,6 @@ public class ContactActivity extends Activity
 		//browserEboard.getSettings().setUserAgentString("Mozilla/5.0");
 		browserEboard.setInitialScale(165);
 		browserEboard.getSettings().setLayoutAlgorithm(LayoutAlgorithm.SINGLE_COLUMN);
-		//browserEboard.getSettings().setLoadWithOverviewMode(true);
-	    //browserEboard.getSettings().setUseWideViewPort(true);
 	    browserEboard.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY); 
 		browserEboard.loadUrl("https://docs.google.com/document/preview?hgd=1&id=1ah8eefcuLkjBZ07CPhLgW51N2Ck6osb4E9S4KGR3pIA&pli=1");
 		
