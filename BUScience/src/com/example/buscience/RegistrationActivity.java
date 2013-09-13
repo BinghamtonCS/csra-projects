@@ -25,7 +25,6 @@ public class RegistrationActivity extends Activity
         setContentView(R.layout.registration_layout);
     }
     
-	@SuppressLint("NewApi")
 	public void schoolTeacherClicked(View view)
     {
     	setContentView(R.layout.school_teacher_layout);
@@ -43,24 +42,28 @@ public class RegistrationActivity extends Activity
 		final WebView browserTimeSlot = (WebView)findViewById(R.id.schoolTimeSlot);
 		browserTimeSlot.setWebViewClient(new WebViewClient());
 		browserTimeSlot.getSettings().setUserAgentString("Mozilla/5.0");
+		browserTimeSlot.getSettings().setBuiltInZoomControls(true);
 		browserTimeSlot.getSettings().setJavaScriptEnabled(true);
 		browserTimeSlot.setInitialScale(165);
 		browserTimeSlot.loadUrl("https://spreadsheets.google.com/spreadsheet/ccc?chrome=false&key=0AphPhvpO0nOPdDRHNnVneW5NTjdzSzdJVTYxWndoSXc&output=html&pubredirect=true&widget=true");
 		
 		final WebView browserSchoolSignUp = (WebView)findViewById(R.id.schoolSignUp);
 		browserSchoolSignUp.setWebViewClient(new WebViewClient());
+		browserSchoolSignUp.getSettings().setBuiltInZoomControls(true);
 		browserSchoolSignUp.getSettings().setJavaScriptEnabled(true);
 		browserSchoolSignUp.setInitialScale(165);
 		browserSchoolSignUp.loadUrl("https://docs.google.com/spreadsheet/embeddedform?bc=transparent&f=%2522Georgia%2522%252C%2Bserif&formkey=dHI3Ym94WXFFUmJfdE9HSUdQSENzenc6MQ&hl=en&htc=%2523666666&lc=%2523135355&pli=1&tc=%2523565555&ttl=0");
 		
 		final WebView browserSchoolUpdate = (WebView)findViewById(R.id.schoolUpdate);
 		browserSchoolUpdate.setWebViewClient(new WebViewClient());
+		browserSchoolUpdate.getSettings().setBuiltInZoomControls(true);
 		browserSchoolUpdate.getSettings().setJavaScriptEnabled(true);
 		browserSchoolUpdate.setInitialScale(165);
 		browserSchoolUpdate.loadUrl("https://docs.google.com/spreadsheet/embeddedform?bc=transparent&f=%2522Georgia%2522%252C%2Bserif&formkey=dDQ3Tk5PcjNYX1plb1RSbnVhOWh2bUE6MQ&hl=en&htc=%2523666666&lc=%2523135355&pli=1&tc=%2523565555&ttl=0");
 
 		final Button clearButton = MainActivity.getClearButton();
 		clearButton.setVisibility(View.VISIBLE);
+		MainActivity.setShowClearButton(true);
 		clearButton.setOnClickListener(new OnClickListener()
 		{
 			public void onClick(View v) {
@@ -72,6 +75,7 @@ public class RegistrationActivity extends Activity
 		
 		Button backButton = MainActivity.getBackButton();
 		backButton.setVisibility(View.VISIBLE);
+		MainActivity.setShowBackButton(true);
 		backButton.setOnClickListener(new OnClickListener()
 		{
 			public void onClick(View v) {
@@ -79,6 +83,8 @@ public class RegistrationActivity extends Activity
         		MainActivity.setTitle("Registration");                		
 				v.setVisibility(View.GONE);
 				clearButton.setVisibility(View.GONE);
+				MainActivity.setShowBackButton(false);
+				MainActivity.setShowClearButton(false);
 			}
 		});
     }
