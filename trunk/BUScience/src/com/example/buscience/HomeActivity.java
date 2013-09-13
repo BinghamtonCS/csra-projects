@@ -66,6 +66,7 @@ public class HomeActivity extends Activity
 		MainActivity.setTitle("About Us");
 		Button backButton = MainActivity.getBackButton();
 		backButton.setVisibility(View.VISIBLE);
+		MainActivity.setShowBackButton(true);
 		backButton.setOnClickListener(new OnClickListener()
 		{
 			public void onClick(View v) {
@@ -73,6 +74,7 @@ public class HomeActivity extends Activity
                 recreateView();
         		MainActivity.setTitle("Home");                		
 				v.setVisibility(View.GONE);
+				MainActivity.setShowBackButton(false);
 			}
 		});
     }

@@ -30,6 +30,7 @@ public class FacebookActivity extends Activity
 	            return false;
 	        }
 	    });
+		browser.getSettings().setBuiltInZoomControls(true);
 		browser.getSettings().setJavaScriptEnabled(true);
 		browser.loadUrl("https://www.facebook.com/bu.scyence");
 		

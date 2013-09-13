@@ -14,6 +14,8 @@ public class MainActivity extends TabActivity
 	private static TextView titleText;
 	private static Button backButton;
 	private static Button clearButton;
+	private static boolean[] showBackButton;
+	private static boolean[] showClearButton;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -44,6 +46,9 @@ public class MainActivity extends TabActivity
 		tabHost.setCurrentTab(0);
 		tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundColor(Color.parseColor("#808080"));
 		tabHost.setOnTabChangedListener(this);
+		
+		showBackButton = new boolean[tabHost.getTabWidget().getChildCount()];
+		showClearButton = new boolean[tabHost.getTabWidget().getChildCount()];		
 	}
 	
 	@Override
@@ -65,8 +70,16 @@ public class MainActivity extends TabActivity
 	public static Button getBackButton()
 	{	return backButton;	}
 	
+	public static void setShowBackButton(boolean visible) {
+		showBackButton[tabHost.getCurrentTab()] = visible;
+	}
+	
 	public static Button getClearButton()
 	{	return clearButton;	}
+	
+	public static void setShowClearButton(boolean visible) {
+		showClearButton[tabHost.getCurrentTab()] = visible;
+	}
 	
 	public static void setTitle(String title)
 	{	titleText.setText(title);	}
@@ -88,7 +101,7 @@ public class MainActivity extends TabActivity
 
 	private void setTabBackground()
 	{
-		for(int i = 0; i < tabHost.getTabWidget().getChildCount();i++) {
+		for(int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
 	        tabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#000000")); //unselected
 	    }
 	    tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundColor(Color.parseColor("#808080")); // selected
@@ -97,22 +110,37 @@ public class MainActivity extends TabActivity
 	    {
 	    	case 0:
 	    		titleText.setText("Home");
+	    		if (!showBackButton[0]) {
+	    			backButton.setVisibility(View.GONE);
+	    		} else {
+	    			backButton.setVisibility(View.VISIBLE);
+	    		}
+	    		clearButton.setVisibility(View.GONE);
 	    		break;
 	    	case 1:
 	    		titleText.setText("Registration");
-				backButton.setVisibility(View.GONE);
+	    		if (!showBackButton[1]) {
+	    			backButton.setVisibility(View.GONE);
+	    		} else {
+	    			backButton.setVisibility(View.VISIBLE);
+	    		}
+	    		if (!showClearButton[1]) {
+	    			clearButton.setVisibility(View.GONE);
+	    		} else {
+	    			clearButton.setVisibility(View.VISIBLE);
+	    		}
 	    		break;
 	    	case 2:
 	    		titleText.setText("Certification");
-				backButton.setVisibility(View.GONE);
+	    		backButton.setVisibility(View.GONE);
 	    		break;
 	    	case 3:
 	    		titleText.setText("Evaluation");
-				backButton.setVisibility(View.GONE);
+	    		backButton.setVisibility(View.GONE);
 	    		break;
 	    	case 4:
 	    		titleText.setText("Contact");
-				backButton.setVisibility(View.GONE);
+	    		backButton.setVisibility(View.GONE);
 	    		break;
 	    }
 	}

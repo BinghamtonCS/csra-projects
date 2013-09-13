@@ -39,11 +39,12 @@ public class CertificationActivity extends Activity
 				
 		final WebView browserQuestions = (WebView)findViewById(R.id.webQuestions);
 		browserQuestions.setWebViewClient(new WebViewClient());
-		browserQuestions.getSettings().setUserAgentString("Mozilla/5.0");
+//		browserQuestions.getSettings().setUserAgentString("Mozilla/5.0");
+		browserQuestions.getSettings().setBuiltInZoomControls(true);
 		browserQuestions.getSettings().setJavaScriptEnabled(true);
-		browserQuestions.setInitialScale(165);
-		browserQuestions.getSettings().setLayoutAlgorithm(LayoutAlgorithm.SINGLE_COLUMN); 
-		browserQuestions.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY); 
+//		browserQuestions.setInitialScale(165);
+//		browserQuestions.getSettings().setLayoutAlgorithm(LayoutAlgorithm.SINGLE_COLUMN); 
+//		browserQuestions.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY); 
 		browserQuestions.loadUrl("https://docs.google.com/spreadsheet/embeddedform?bc=transparent&f=%2522Georgia%2522%252C%2Bserif&formkey=dHpJbk1WWjljVFdJQzNBZ0FQTFpzNVE6MA&hl=en&htc=%2523666666&lc=%2523135355&pli=1&tc=%2523565555&ttl=0");
 		
 		final Button clearButton = MainActivity.getClearButton();
