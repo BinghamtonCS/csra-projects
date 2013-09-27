@@ -69,6 +69,10 @@
     <string name="bmail9">jvayalu1@binghamton.edu</string>
     <string name="about_us"><u>About Us\t</u></string>
     <string name="join_us"><u>\tJoin Us</u></string>
+    <string name="lesson_plans"><u>Lesson Plans</u></string>
+    <string name="calendar"><u>Calendar</u></string>
+    <string name="past_lessons">Past Lessons</string>
+    <string name="fall2012">Fall 2012</string>
     <string name="title_activity_facebook">FacebookActivity</string>
     <string name="elementary"> &#8226; Elementary School Teacher</string>
     <string name="university"> &#8226; University Student Teacher</string>
@@ -76,5 +80,6 @@
     <string name="evaluation_page_title">Student/Teacher Evaluation</string>
     <string name="certification_button">Certification Questions</string>
     <string name="slideshow_button">Return to Slideshow</string>
+    
 
 </resources>
