@@ -79,13 +79,52 @@ public class HomeActivity extends Activity
 		});
     }
     
+    public void joinUsClicked(View view) {
+    	MainActivity.getCurrentTabHost().setCurrentTab(1);
+    }
+    
     public void goToFacebook(View view) {
     	startActivity(new Intent(this, FacebookActivity.class));
     }
     
-    public void joinUsClicked(View view) {
-    	MainActivity.getCurrentTabHost().setCurrentTab(1);
+    public void lessonClicked(View view) 
+    {
+    	setContentView(R.layout.lesson_layout);
+		MainActivity.setTitle("Lesson Plans");
+		Button backButton = MainActivity.getBackButton();
+		backButton.setVisibility(View.VISIBLE);
+		MainActivity.setShowBackButton(true);
+		backButton.setOnClickListener(new OnClickListener()
+		{
+			public void onClick(View v) {
+        		setContentView(R.layout.home_layout);
+                recreateView();
+        		MainActivity.setTitle("Home");                		
+				v.setVisibility(View.GONE);
+				MainActivity.setShowBackButton(false);
+			}
+		});
     }
+    
+    public void calendarClicked(View view) 
+    {
+    	setContentView(R.layout.calendar_layout);
+		MainActivity.setTitle("Calendar");
+		Button backButton = MainActivity.getBackButton();
+		backButton.setVisibility(View.VISIBLE);
+		MainActivity.setShowBackButton(true);
+		backButton.setOnClickListener(new OnClickListener()
+		{
+			public void onClick(View v) {
+        		setContentView(R.layout.home_layout);
+                recreateView();
+        		MainActivity.setTitle("Home");                		
+				v.setVisibility(View.GONE);
+				MainActivity.setShowBackButton(false);
+			}
+		});
+    }
+    
     
     class MySwipeDetector extends GestureDetector.SimpleOnGestureListener
     {
