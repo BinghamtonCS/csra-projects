@@ -11,32 +11,30 @@ import android.widget.Button;
 
 public class ContactActivity extends Activity
 {
-	
-	//webview.loadUrl("javascript:(function() { " +
-  //  "var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig; " +
-    //"document.getElementsByTagName('body')[0].innerHTML =  document.getElementsByTagName('body')[0].innerHTML.replace(exp,'<a href='$1'>$1</a>');" +
-   // "})()");
-	
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.contact_layout);
-        
-        final WebView browserEboard = (WebView)findViewById(R.id.eboard);
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.contact_layout);
+
+		final WebView browserEboard = (WebView)findViewById(R.id.eboard);
 		browserEboard.setWebViewClient(new WebViewClient());
 		//browserEboard.getSettings().setUserAgentString("Mozilla/5.0");
 		browserEboard.setInitialScale(165);
 		browserEboard.getSettings().setLayoutAlgorithm(LayoutAlgorithm.SINGLE_COLUMN);
-	    browserEboard.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY); 
-		browserEboard.loadUrl("https://docs.google.com/document/preview?hgd=1&id=1ah8eefcuLkjBZ07CPhLgW51N2Ck6osb4E9S4KGR3pIA&pli=1");
-		
+		browserEboard.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY); 
+		String url = new ReadURL().read("http://www.buscience.org/Contact", "docs.google.com");
+		browserEboard.loadUrl(url);
+		//browserEboard.loadUrl("https://docs.google.com/document/preview?hgd=1&id=1ah8eefcuLkjBZ07CPhLgW51N2Ck6osb4E9S4KGR3pIA&pli=1");
+
 		final Button clearButton = MainActivity.getClearButton();
 		clearButton.setVisibility(View.VISIBLE);
 		clearButton.setOnClickListener(new OnClickListener()
 		{
 			public void onClick(View v) {
-				browserEboard.loadUrl("https://docs.google.com/document/preview?hgd=1&id=1ah8eefcuLkjBZ07CPhLgW51N2Ck6osb4E9S4KGR3pIA&pli=1");
+				//get url from ReadURL
+				String url = new ReadURL().read("http://www.buscience.org/Contact", "docs.google.com");
+				browserEboard.loadUrl(url);
 			}
 		});
-    }
+	}
 
 }

@@ -1,23 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/LinearLayout1"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/ScrollView1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/green1"
-        android:fadingEdge="vertical"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="Please add our calendar to your google calendar to keep updated on meeting times and events held by BU Science!"
-        android:textColor="@color/grey" /> 
-
-    <WebView
-        android:id="@+id/calendar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
 
-</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:fadingEdge="vertical"
+            android:gravity="center"
+            android:background="@color/green1"
+            android:text="Please add our calendar to your google calendar to keep updated on meeting times and events held by BU Science!"
+            android:textColor="@color/grey" >
+        </TextView>
+
+        <WebView
+            android:id="@+id/calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarStyle="outsideOverlay" >
+        </WebView>
+    </LinearLayout>
+
+</ScrollView>
