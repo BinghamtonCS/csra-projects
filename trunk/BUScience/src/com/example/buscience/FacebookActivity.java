@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class FacebookActivity extends Activity 
 {
-	WebView browser;
+	WebView facebook;
 	
 	protected void onCreate(Bundle savedInstanceState) 
 	{
@@ -24,14 +24,14 @@ public class FacebookActivity extends Activity
 		boolean requestPassed = requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		setContentView(R.layout.activity_facebook);
 		
-		browser = (WebView) findViewById(R.id.webView1);
-		browser.setWebViewClient(new WebViewClient());
+		facebook = (WebView) findViewById(R.id.facebook);
+		facebook.setWebViewClient(new WebViewClient());
 		
-		browser.getSettings().setBuiltInZoomControls(true);
+		facebook.getSettings().setBuiltInZoomControls(true);
 		
-		browser.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+		facebook.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
 	
-		browser.loadUrl("https://www.facebook.com/bu.scyence");
+		facebook.loadUrl("https://www.facebook.com/bu.scyence");
 		
 		if (requestPassed) {
 			getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_bar_layout);
@@ -42,15 +42,16 @@ public class FacebookActivity extends Activity
 		((Button)findViewById(R.id.btnBack)).setOnClickListener(new OnClickListener()
 		{
 			public void onClick(View v) {
-				onBackPressed();
-			}
+				onBackPressed();				
+		    }
 		});
-	
+	    
+		/*
 		((Button)findViewById(R.id.btnReload)).setOnClickListener(new OnClickListener()
 		{
 			public void onClick(View v) {	
 
 			}
-		});
+		});*/
 	}
 }

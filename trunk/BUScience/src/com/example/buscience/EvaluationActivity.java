@@ -20,7 +20,7 @@ public class EvaluationActivity extends Activity
 		
 		MainActivity.setTitle("Student/Teacher Evaluation");
 		
-		final WebView browser = (WebView) findViewById(R.id.webView1);
+		final WebView browser = (WebView) findViewById(R.id.evaluation);
 		browser.setWebViewClient(new WebViewClient());
 		
 		browser.getSettings().setBuiltInZoomControls(true);
