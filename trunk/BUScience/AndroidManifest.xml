@@ -48,6 +48,10 @@
             android:name="com.example.buscience.FacebookActivity"
             android:label="@string/title_activity_facebook" >
         </activity>
+        <activity
+            android:name="com.example.buscience.TablingActivity"
+            android:label="@string/title_activity_tabling" >
+        </activity>
     </application>
 
 </manifest>

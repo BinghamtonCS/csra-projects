@@ -15,27 +15,27 @@ import android.webkit.WebViewClient;
 import android.widget.*;
 
 public class RegistrationActivity extends Activity 
-implements TabHost.OnTabChangeListener
+	implements TabHost.OnTabChangeListener
 {
 	private TabHost schoolTabs;
-
-	public void onCreate(Bundle savedInstanceState) 
-	{
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.registration_layout);
-	}
-
+	
+    public void onCreate(Bundle savedInstanceState) 
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.registration_layout);
+    }
+    
 	public void schoolTeacherClicked(View view)
-	{
-		setContentView(R.layout.school_teacher_layout);
+    {
+    	setContentView(R.layout.school_teacher_layout);
 		MainActivity.setTitle("School-Teacher Sign-Up");
-
+		
 		schoolTabs = (TabHost)findViewById(R.id.schoolTabs);
 		schoolTabs.setup();
 		addTab(schoolTabs, "Time-Slot", R.id.tabSchoolTimeSlot);
 		addTab(schoolTabs, "Sign-Up", R.id.tabSchoolSignUp);
 		addTab(schoolTabs, "Schedule Change", R.id.tabSchoolUpdate);
-
+		
 		setTabBackground(schoolTabs.getCurrentTab());
 		schoolTabs.setOnTabChangedListener(this);
 
@@ -45,27 +45,21 @@ implements TabHost.OnTabChangeListener
 		browserTimeSlot.getSettings().setBuiltInZoomControls(true);
 		browserTimeSlot.getSettings().setJavaScriptEnabled(true);
 		browserTimeSlot.setInitialScale(165);
-		String url1 = new ReadURL().read("http://www.buscience.org/Registration/school-teacher-sign-up", "spreadsheets.google.com");
-		browserTimeSlot.loadUrl(url1);
-		//browserTimeSlot.loadUrl("https://spreadsheets.google.com/spreadsheet/ccc?chrome=false&key=0AphPhvpO0nOPdDRHNnVneW5NTjdzSzdJVTYxWndoSXc&output=html&pubredirect=true&widget=true");
-
+		browserTimeSlot.loadUrl("https://spreadsheets.google.com/spreadsheet/ccc?chrome=false&key=0AphPhvpO0nOPdDRHNnVneW5NTjdzSzdJVTYxWndoSXc&output=html&pubredirect=true&widget=true");
+		
 		final WebView browserSchoolSignUp = (WebView)findViewById(R.id.schoolSignUp);
 		browserSchoolSignUp.setWebViewClient(new WebViewClient());
 		browserSchoolSignUp.getSettings().setBuiltInZoomControls(true);
 		browserSchoolSignUp.getSettings().setJavaScriptEnabled(true);
 		browserSchoolSignUp.setInitialScale(165);
-		String url2 = new ReadURL().read("http://www.buscience.org/Registration/school-teacher-sign-up", "New Teacher ");
-		browserSchoolSignUp.loadUrl(url2);
-		//browserSchoolSignUp.loadUrl("https://docs.google.com/spreadsheet/embeddedform?bc=transparent&f=%2522Georgia%2522%252C%2Bserif&formkey=dHI3Ym94WXFFUmJfdE9HSUdQSENzenc6MQ&hl=en&htc=%2523666666&lc=%2523135355&pli=1&tc=%2523565555&ttl=0");
-
+		browserSchoolSignUp.loadUrl("https://docs.google.com/spreadsheet/embeddedform?bc=transparent&f=%2522Georgia%2522%252C%2Bserif&formkey=dHI3Ym94WXFFUmJfdE9HSUdQSENzenc6MQ&hl=en&htc=%2523666666&lc=%2523135355&pli=1&tc=%2523565555&ttl=0");
+		
 		final WebView browserSchoolUpdate = (WebView)findViewById(R.id.schoolUpdate);
 		browserSchoolUpdate.setWebViewClient(new WebViewClient());
 		browserSchoolUpdate.getSettings().setBuiltInZoomControls(true);
 		browserSchoolUpdate.getSettings().setJavaScriptEnabled(true);
 		browserSchoolUpdate.setInitialScale(165);
-		String url3 = new ReadURL().read("http://www.buscience.org/Registration/school-teacher-sign-up", "Information Update");
-		browserSchoolUpdate.loadUrl(url3);
-		//browserSchoolUpdate.loadUrl("https://docs.google.com/spreadsheet/embeddedform?bc=transparent&f=%2522Georgia%2522%252C%2Bserif&formkey=dDQ3Tk5PcjNYX1plb1RSbnVhOWh2bUE6MQ&hl=en&htc=%2523666666&lc=%2523135355&pli=1&tc=%2523565555&ttl=0");
+		browserSchoolUpdate.loadUrl("https://docs.google.com/spreadsheet/embeddedform?bc=transparent&f=%2522Georgia%2522%252C%2Bserif&formkey=dDQ3Tk5PcjNYX1plb1RSbnVhOWh2bUE6MQ&hl=en&htc=%2523666666&lc=%2523135355&pli=1&tc=%2523565555&ttl=0");
 
 		final Button clearButton = MainActivity.getClearButton();
 		clearButton.setVisibility(View.VISIBLE);
@@ -73,43 +67,51 @@ implements TabHost.OnTabChangeListener
 		clearButton.setOnClickListener(new OnClickListener()
 		{
 			public void onClick(View v) {
-				String url1 = new ReadURL().read("http://www.buscience.org/Registration/school-teacher-sign-up", "spreadsheets.google.com");
-				browserTimeSlot.loadUrl(url1);
-				String url2 = new ReadURL().read("http://www.buscience.org/Registration/school-teacher-sign-up", "New Teacher ");
-				browserSchoolSignUp.loadUrl(url2);
-				String url3 = new ReadURL().read("http://www.buscience.org/Registration/school-teacher-sign-up", "Information Update");
-				browserSchoolUpdate.loadUrl(url3);
+				browserTimeSlot.loadUrl("https://spreadsheets.google.com/spreadsheet/ccc?chrome=false&key=0AphPhvpO0nOPdDRHNnVneW5NTjdzSzdJVTYxWndoSXc&output=html&pubredirect=true&widget=true");
+				browserSchoolSignUp.loadUrl("https://docs.google.com/spreadsheet/embeddedform?bc=transparent&f=%2522Georgia%2522%252C%2Bserif&formkey=dHI3Ym94WXFFUmJfdE9HSUdQSENzenc6MQ&hl=en&htc=%2523666666&lc=%2523135355&pli=1&tc=%2523565555&ttl=0");
+				browserSchoolUpdate.loadUrl("https://docs.google.com/spreadsheet/embeddedform?bc=transparent&f=%2522Georgia%2522%252C%2Bserif&formkey=dDQ3Tk5PcjNYX1plb1RSbnVhOWh2bUE6MQ&hl=en&htc=%2523666666&lc=%2523135355&pli=1&tc=%2523565555&ttl=0");				
 			}
 		});
-
+		
 		Button backButton = MainActivity.getBackButton();
 		backButton.setVisibility(View.VISIBLE);
 		MainActivity.setShowBackButton(true);
 		backButton.setOnClickListener(new OnClickListener()
 		{
 			public void onClick(View v) {
-				setContentView(R.layout.registration_layout);
-				MainActivity.setTitle("Registration");                		
+        		setContentView(R.layout.registration_layout);
+        		MainActivity.setTitle("Registration");                		
 				v.setVisibility(View.GONE);
 				clearButton.setVisibility(View.GONE);
 				MainActivity.setShowBackButton(false);
 				MainActivity.setShowClearButton(false);
 			}
 		});
-	}
-
-	public void universityTeacherClicked(View view)
-	{
-
-	}
-
-	public void tablingClicked(View view)
-	{
-
-	}
-
-	private void addTab(TabHost tabHost, String label, int id) 
-	{
+    }
+    
+    public void universityTeacherClicked(View view)
+    {
+    	
+    }
+    
+    public void tablingClicked(View view)
+    {
+    	/*setContentView(R.layout.tabling_layout);
+		
+		WebView tablingSchedule = (WebView) findViewById(R.id.tablingSchedule);
+		tablingSchedule.setWebViewClient(new WebViewClient());
+		
+		tablingSchedule.getSettings().setBuiltInZoomControls(true);
+		
+		tablingSchedule.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+		tablingSchedule.getSettings().setJavaScriptEnabled(true);
+		tablingSchedule.loadUrl("https://spreadsheets.google.com/a/binghamton.edu/spreadsheet/preview?key=0AphPhvpO0nOPdEp1REwzRHNBQm9FMWdpMDFreTZyRWc");*/
+    	
+    	startActivity(new Intent(this, TablingActivity.class));
+    }
+    
+    private void addTab(TabHost tabHost, String label, int id) 
+    {
 		TabHost.TabSpec spec = tabHost.newTabSpec(label);
 		View tabIndicator = LayoutInflater.from(this).inflate(R.layout.tab_indicator_reg, tabHost.getTabWidget(), false);
 		TextView title = (TextView)tabIndicator.findViewById(R.id.title);
@@ -118,18 +120,18 @@ implements TabHost.OnTabChangeListener
 		spec.setIndicator(tabIndicator);
 		spec.setContent(id);
 		tabHost.addTab(spec);
-	}
+    }
 
 	@Override
 	public void onTabChanged(String arg0) {
 		setTabBackground(schoolTabs.getCurrentTab());
 	}
-
+	
 	private void setTabBackground(int index) 
 	{
 		for(int i = 0; i < schoolTabs.getTabWidget().getChildCount();i++) {
 			schoolTabs.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#000000")); //unselected
-		}
+	    }
 		schoolTabs.getTabWidget().getChildAt(index).setBackgroundColor(Color.parseColor("#808080")); // selected
 	}
 }

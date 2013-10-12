@@ -9,6 +9,7 @@
     <string name="title_activity_certification">CertificationActivity</string>
     <string name="title_activity_evaluation">EvaluationActivity</string>
     <string name="title_activity_contact">ContactActivity</string>
+    <string name="title_activity_tabling">TablingActivity</string>
     <string name="icon">ICON</string>
     <string name="pageTitle">Eboard 2012&#8211;2013</string>
     <string name="emailString">Email:</string>

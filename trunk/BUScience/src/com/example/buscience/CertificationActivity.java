@@ -35,9 +35,7 @@ public class CertificationActivity extends Activity
 		browserPresentation.getSettings().setUserAgentString("Mozilla/5.0");
 		browserPresentation.getSettings().setJavaScriptEnabled(true);
 		browserPresentation.setInitialScale(165);
-		String url1 = new ReadURL().read("http://www.buscience.org/certification", "Certification Presentation");
-		browserPresentation.loadUrl(url1);
-		//browserPresentation.loadUrl("http://docs.google.com/presentation/d/1zboHLCHmEIn1DTxSJM4GbL_4LQmlqN9URu39I52CG1c/embed?hl=en&amp;size=l");
+		browserPresentation.loadUrl("http://docs.google.com/presentation/d/1zboHLCHmEIn1DTxSJM4GbL_4LQmlqN9URu39I52CG1c/embed?hl=en&amp;size=l");
 				
 		final WebView browserQuestions = (WebView)findViewById(R.id.webQuestions);
 		browserQuestions.setWebViewClient(new WebViewClient());
@@ -46,21 +44,16 @@ public class CertificationActivity extends Activity
 		browserQuestions.getSettings().setJavaScriptEnabled(true);
 //		browserQuestions.setInitialScale(165);
 //		browserQuestions.getSettings().setLayoutAlgorithm(LayoutAlgorithm.SINGLE_COLUMN); 
-//		browserQuestions.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
-		String url2 = new ReadURL().read("http://www.buscience.org/certification", "spreadsheet");
-		browserQuestions.loadUrl(url2);
-		//browserQuestions.loadUrl("https://docs.google.com/spreadsheet/embeddedform?bc=transparent&f=%2522Georgia%2522%252C%2Bserif&formkey=dHpJbk1WWjljVFdJQzNBZ0FQTFpzNVE6MA&hl=en&htc=%2523666666&lc=%2523135355&pli=1&tc=%2523565555&ttl=0");
+//		browserQuestions.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY); 
+		browserQuestions.loadUrl("https://docs.google.com/spreadsheet/embeddedform?bc=transparent&f=%2522Georgia%2522%252C%2Bserif&formkey=dHpJbk1WWjljVFdJQzNBZ0FQTFpzNVE6MA&hl=en&htc=%2523666666&lc=%2523135355&pli=1&tc=%2523565555&ttl=0");
 		
 		final Button clearButton = MainActivity.getClearButton();
 		clearButton.setVisibility(View.VISIBLE);
 		clearButton.setOnClickListener(new OnClickListener()
 		{
 			public void onClick(View v) {
-				String url1 = new ReadURL().read("http://www.buscience.org/certification", "Certification Presentation");
-				browserPresentation.loadUrl(url1);
-				String url2 = new ReadURL().read("http://www.buscience.org/certification", "spreadsheet");
-				browserQuestions.loadUrl(url2);
-							
+				browserPresentation.loadUrl("http://docs.google.com/presentation/d/1zboHLCHmEIn1DTxSJM4GbL_4LQmlqN9URu39I52CG1c/embed?hl=en&amp;size=l");
+				browserQuestions.loadUrl("https://docs.google.com/spreadsheet/embeddedform?bc=transparent&f=%2522Georgia%2522%252C%2Bserif&formkey=dHpJbk1WWjljVFdJQzNBZ0FQTFpzNVE6MA&hl=en&htc=%2523666666&lc=%2523135355&pli=1&tc=%2523565555&ttl=0");				
 			}
 		});
 	}

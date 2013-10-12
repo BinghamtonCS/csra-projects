@@ -10,6 +10,7 @@ import android.widget.Button;
 
 public class LessonActivity extends Activity{
 	
+
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.lesson_layout);
@@ -18,11 +19,7 @@ public class LessonActivity extends Activity{
 		grid.setWebViewClient(new WebViewClient());
 		grid.getSettings().setUserAgentString("Mozilla/5.0");
 		grid.getSettings().setJavaScriptEnabled(true);
-		grid.setInitialScale(165);
-		
-		String url = new ReadURL().read("http://www.buscience.org/home/lesson-plans", "spreadsheets.google.com");
-		grid.loadUrl(url);
-		//grid.loadUrl("https://spreadsheets.google.com/spreadsheet/ccc?chrome=false&key=0AphPhvpO0nOPdEhPampJeW9KMHV2dVRBYTFNbW9fd1E&output=html&pubredirect=true&widget=true");
+		grid.loadUrl("https://spreadsheets.google.com/spreadsheet/ccc?chrome=false&key=0AphPhvpO0nOPdEhPampJeW9KMHV2dVRBYTFNbW9fd1E&output=html&pubredirect=true&widget=true");
 
 		//http://www.buscience.org/home/lesson-plans/fall-2011
 		Button backButton = MainActivity.getBackButton();
