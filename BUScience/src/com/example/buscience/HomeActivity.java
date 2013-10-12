@@ -27,8 +27,8 @@ public class HomeActivity extends Activity
     {
     	Display display = getWindowManager().getDefaultDisplay();
         int[] slideImgs = {R.drawable.img001, R.drawable.img002, R.drawable.img003,
-        		R.drawable.img004, R.drawable.img005, R.drawable.img006,
-        		R.drawable.img007, R.drawable.img008, R.drawable.img009};
+        				   R.drawable.img004, R.drawable.img005, R.drawable.img006,
+        				   R.drawable.img007, R.drawable.img008, R.drawable.img009};
         
         ViewFlipper flipper = ((ViewFlipper)findViewById(R.id.viewFlipper1));
         flipper.getLayoutParams().height = (int)(display.getWidth() * .75 + .5);
@@ -94,12 +94,12 @@ public class HomeActivity extends Activity
     	setContentView(R.layout.lesson_layout);
 		MainActivity.setTitle("Lesson Plans");
 		
-		final WebView grid = (WebView)findViewById(R.id.lesson_grid);
-		grid.setWebViewClient(new WebViewClient());
-		grid.getSettings().setUserAgentString("Mozilla/5.0");
-		grid.getSettings().setJavaScriptEnabled(true);
-		grid.setInitialScale(165);
-		grid.loadUrl("https://spreadsheets.google.com/a/binghamton.edu/spreadsheet/preview?key=0AphPhvpO0nOPdEhPampJeW9KMHV2dVRBYTFNbW9fd1E");
+//		final WebView grid = (WebView)findViewById(R.id.lesson_grid);
+//		grid.setWebViewClient(new WebViewClient());
+//		grid.getSettings().setUserAgentString("Mozilla/5.0");
+//		grid.getSettings().setJavaScriptEnabled(true);
+//		grid.setInitialScale(165);
+//		grid.loadUrl("https://spreadsheets.google.com/a/binghamton.edu/spreadsheet/preview?key=0AphPhvpO0nOPdEhPampJeW9KMHV2dVRBYTFNbW9fd1E");
 		
 		Button backButton = MainActivity.getBackButton();
 		backButton.setVisibility(View.VISIBLE);

@@ -60,8 +60,7 @@ public class CertificationActivity extends Activity
 
 	@Override
 	public void onTabChanged(String arg0) {
-		setTabBackground(certTabs.getCurrentTab());
-		
+		setTabBackground(certTabs.getCurrentTab());	
 	}
 	
 	private void addTab(TabHost tabHost, String label, int id) 
