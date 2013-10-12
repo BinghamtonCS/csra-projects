@@ -26,11 +26,11 @@ public class MainActivity extends TabActivity
 		setContentView(R.layout.activity_main);
 		if (requestPassed) {
 			getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_bar_layout);
-			backButton = ((Button)findViewById(R.id.btnBack));
+			backButton = ((Button) findViewById(R.id.btnBack));
 			backButton.setVisibility(View.GONE);
-			clearButton = ((Button)findViewById(R.id.btnReload));
+			clearButton = ((Button) findViewById(R.id.btnReload));
 			clearButton.setVisibility(View.GONE);
-			titleText = ((TextView)findViewById(R.id.titleHeading1));
+			titleText = ((TextView) findViewById(R.id.titleHeading1));
 			titleText.setText("Home");
 		}
 		
