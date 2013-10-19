@@ -24,6 +24,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
+import android.text.util.Linkify;
 import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -224,6 +225,7 @@ protected void onPostExecute(String jsonText){
 		for (int i = 0; i < tweetList.size(); i++)
 		{
 				TextView temp = new TextView(getActivity());
+				temp.setAutoLinkMask(Linkify.ALL);
 				temp.setText(tweetList.get(i));
 				temp.setTypeface(Typeface.SERIF);
 				if (i % 2 == 0)
