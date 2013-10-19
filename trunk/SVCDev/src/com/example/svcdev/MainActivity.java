@@ -76,7 +76,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
   		case R.id.source:
   			new AlertDialog.Builder(this)
   	    .setTitle("Developers")
-  	    .setMessage("This project was completed as open-source by members of the Binghamton Computer Science Research Alliance, now known as BU's ACM Chapter.\n\nDeveloper: \nChristopher Zhang (czhang44@binghamton.edu) \n\nDesign: \nCheng Lin (khuang13@binghamton.edu) \n\nPlease email us with bugs, fixes, or improvements you would like to see.\n\nNew project ideas or proposals are also welcome.\n\nPlease contact acm@binghamton.edu").show();
+  	    .setMessage("This project was completed as open-source by members of the Binghamton Computer Science Research Alliance, now known as Binghamton ACM Chapter.\n\nDeveloper: \nChristopher Zhang (czhang44@binghamton.edu) \n\nDesign: \nCheng Lin (khuang13@binghamton.edu) \n\nPlease email us with bugs, fixes, or improvements you would like to see.\n\nNew project ideas or proposals are also welcome.\n\nPlease contact acm.projects@binghamton.edu").show();
   			return true;
   		default: 
   			return true;
