@@ -7,21 +7,27 @@ import Fragments.LaunchpadSectionFragment;
 import Fragments.SignupSectionFragment;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
+import android.app.AlertDialog;
 import android.app.FragmentTransaction;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebView;
+import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
 	
 	AppSectionsPagerAdapter mAppSectionsPagerAdapter;
 	ViewPager mViewPager;
-	
+	WebView eWebView;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +52,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         					.setText(mAppSectionsPagerAdapter.getPageTitle(i))
         					.setTabListener(this));
         }
-        
     }
 
     @Override
@@ -60,8 +65,18 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
   	public boolean onOptionsItemSelected(MenuItem item) {
   		// TODO Auto-generated method stub
   		switch (item.getItemId()) {
-  		case R.id.itemRefresh:
-  			//do something when this button is pressed
+  		case R.id.itemMeets:
+  			Context context = getApplicationContext();
+  			CharSequence text = "Office :UUW309 \nsvc@binghamtonsa.org \nMeetings are held bi-weekly\nDates and Locations TBA Check B-Line";
+  			int duration = Toast.LENGTH_LONG;
+  			Toast toast = Toast.makeText(context, text, duration);
+  			toast.setGravity(Gravity.CENTER, 0, 0);
+  			toast.show();
+  			return true;
+  		case R.id.source:
+  			new AlertDialog.Builder(this)
+  	    .setTitle("Developers")
+  	    .setMessage("This project was completed as open-source by members of the Binghamton Computer Science Research Alliance, now known as BU's ACM Chapter.\n\nDeveloper: Christopher Zhang (czhang44@binghamton.edu) \n\nDesign: Cheng Lin (khuang13@binghamton.edu) \nPlease email us with bugs, fixes, or improvements you would like to see.\n\nNew project ideas or proposals are also welcome.").show();
   			return true;
   		default: 
   			return true;

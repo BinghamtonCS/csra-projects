@@ -27,9 +27,9 @@ public class MyAdapter extends BaseExpandableListAdapter {
 		GetMembershipInfo getMI = new GetMembershipInfo();
 		GetVolunteerHours getVH = new GetVolunteerHours();
 		
-		String missionStatement = "Loading...";
-		String membershipInfo = "Loading...";
-		String volunteerHours = "Loading...";
+		String missionStatement = "No Internet connection.";
+		String membershipInfo = "No Internet connection.";
+		String volunteerHours = "No Internet connection.";
 		String eboard ="See Contact Tab";
 		
 		try {
