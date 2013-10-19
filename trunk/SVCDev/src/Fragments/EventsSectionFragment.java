@@ -31,7 +31,7 @@ public class EventsSectionFragment extends Fragment {
 	            return false;
 	        }
 	    });
-		browser.loadUrl("https://docs.google.com/document/d/1nrSm8XzFZsVlylTug4BgEssALIQTE2Vcg21kFTOzc8A/preview");
+		browser.loadUrl("https://docs.google.com/document/d/16JBP-k6SV8llsEa6R0LuLe3vnrvNk4ll8uzArBgEM2w/pub?embedded=true");
 		lastUpdated.setText("Most Recent Update Attempt: \n" + java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime()));
 		
 		ImageButton refresherB = (ImageButton) rootView.findViewById(R.id.ibRefresh);
@@ -39,7 +39,7 @@ public class EventsSectionFragment extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
-				browser.loadUrl("https://docs.google.com/document/d/1nrSm8XzFZsVlylTug4BgEssALIQTE2Vcg21kFTOzc8A/preview");
+				browser.loadUrl("https://docs.google.com/document/d/16JBP-k6SV8llsEa6R0LuLe3vnrvNk4ll8uzArBgEM2w/pub?embedded=true");
 				lastUpdated.setText("Most Recent Update Attempt: \n" + java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime()));
 			}
 		});

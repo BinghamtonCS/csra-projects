@@ -31,7 +31,7 @@ public class SignupSectionFragment extends Fragment {
 	            return false;
 	        }
 	    });
-		browser.loadUrl("https://docs.google.com/spreadsheet/embeddedform?formkey=dFQ1eFNYckJkeVJhQjdYaGxlRjJnaHc6MQ");
+		browser.loadUrl("https://docs.google.com/forms/d/1EsibiV7vIqVbsTvYFUjuE17LYWxMVMwxb1LmPa16N8o/viewform?embedded=true#start=embed");
 		lastUpdated.setText("Most Recent Update Attempt: \n" + java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime()));
 		
 		ImageButton refresherB = (ImageButton) rootView.findViewById(R.id.ibRefreshSU);
@@ -39,7 +39,7 @@ public class SignupSectionFragment extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
-				browser.loadUrl("https://docs.google.com/spreadsheet/embeddedform?formkey=dFQ1eFNYckJkeVJhQjdYaGxlRjJnaHc6MQ");
+				browser.loadUrl("https://docs.google.com/forms/d/1EsibiV7vIqVbsTvYFUjuE17LYWxMVMwxb1LmPa16N8o/viewform?embedded=true#start=embed");
 				lastUpdated.setText("Most Recent Update Attempt: \n" + java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime()));
 				}
 			});
