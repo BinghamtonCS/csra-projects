@@ -225,11 +225,12 @@ protected void onPostExecute(String jsonText){
 		for (int i = 0; i < tweetList.size(); i++)
 		{
 				TextView temp = new TextView(getActivity());
+				temp.setTextSize(18);
 				temp.setAutoLinkMask(Linkify.ALL);
 				temp.setText(tweetList.get(i));
 				temp.setTypeface(Typeface.SERIF);
 				if (i % 2 == 0)
-					temp.setBackgroundColor(Color.LTGRAY);
+					temp.setBackgroundColor(Color.parseColor("#78AB46"));
 				else
 					temp.setBackgroundColor(Color.WHITE);
 				temp.setPadding(10, 10, 10, 10);
