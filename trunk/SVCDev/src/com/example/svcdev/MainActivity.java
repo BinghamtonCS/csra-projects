@@ -70,7 +70,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
   		switch (item.getItemId()) {
   		case R.id.itemMeets:
   			Context context = getApplicationContext();
-  			CharSequence text = "Office :UUW309 \nsvc@binghamtonsa.org \nMeetings are held bi-weekly\nDates and Locations TBA Check B-Line";
+  			CharSequence text = "svc@binghamtonsa.org \nPlease contact us to be added to the listserv for news and meeting details.";
   			int duration = Toast.LENGTH_LONG;
   			Toast toast = Toast.makeText(context, text, duration);
   			toast.setGravity(Gravity.CENTER, 0, 0);
@@ -79,7 +79,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
   		case R.id.source:
   			new AlertDialog.Builder(this)
   	    .setTitle("Developers")
-  	    .setMessage("This project was completed as open-source by members of the Binghamton Computer Science Research Alliance, now known as Binghamton ACM Chapter.\n\nDeveloper: \nChristopher Zhang (czhang44@binghamton.edu) \n\nDesign: \nCheng Lin (khuang13@binghamton.edu) \n\nPlease email us with bugs, fixes, or improvements you would like to see.\n\nNew project ideas or proposals are also welcome.\n\nPlease contact acm.projects@binghamton.edu").show();
+  	    .setMessage("This project was completed as open-source by members of the Binghamton Computer Science Research Alliance, now known as the Binghamton ACM Chapter.\n\nDeveloper: \nChristopher Zhang (christopherzhang3@gmail.com) \n\nDesign: \nCheng Lin (khuang13@binghamton.edu) \n\nPlease email us with bugs, fixes, or improvements you would like to see.\n\nNew project ideas or proposals are also welcome.\n\n Contact acm.projects@binghamton.edu").show();
   			return true;
   		default: 
   			return true;

@@ -81,7 +81,7 @@ public class MyAdapter extends BaseExpandableListAdapter {
 		TextView tv = new TextView(context);
 		tv.setText(Html.fromHtml(childList[groupPosition][childPosition]));
 		tv.setPadding(80, 10, 10, 10);
-		tv.setTextSize(25);
+		tv.setTextSize(17);
 		return tv;
 	}
 

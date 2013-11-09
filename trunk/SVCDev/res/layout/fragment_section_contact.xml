@@ -2,20 +2,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="@drawable/gradient">
 
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" >
-
-        <TextView
-            android:id="@+id/tvEboard"
-            android:padding="13dp"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Loading Data" 
-            android:autoLink="email"
-            android:gravity="center"/>
+		
+        <LinearLayout 
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:orientation="vertical" 
+    	android:background="@drawable/gradient">
+	        <TextView
+	            android:id="@+id/tvEboard"
+	            android:padding="13dp"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Loading Data" 
+	            android:autoLink="email"
+	            android:gravity="center"/>
+        
+	        <TextView
+	            android:id="@+id/basicEmail"
+	            android:padding="13dp"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="center"
+	            android:text="General Email\nsvc@binghamtonsa.org"
+	            android:autoLink="email"
+	            />
+        </LinearLayout>
     
     </ScrollView>
 
