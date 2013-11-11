@@ -9,12 +9,14 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
-public class GetMembershipInfo {
-	
-	public String getInternetData() throws Exception{
+public class GetMembershipInfo 
+{
+	public String getInternetData() throws Exception
+	{
 		BufferedReader in = null;
 		String data = null;
-		try{
+		try
+		{
 			HttpClient client = new DefaultHttpClient();
 			URI website = new URI("http://www.busvc.blogspot.com/p/about.html");
 			HttpGet request = new HttpGet();
@@ -25,7 +27,8 @@ public class GetMembershipInfo {
 			String l = "";
 			String nl = System.getProperty("line.separator");
 			boolean start = false;
-			while ((l = in.readLine()) !=null) {
+			while ((l = in.readLine()) !=null) 
+			{
 				if (l.contains(">Membership"))
 				{
 					start = true;
@@ -48,12 +51,18 @@ public class GetMembershipInfo {
 			sb.append("</html>");
 			data = sb.toString();
 			return data;
-		} finally {
-			if (in != null) {
-				try {
+		} 
+		finally 
+		{
+			if (in != null) 
+			{
+				try 
+				{
 					in.close();
 					return data;
-				} catch (Exception e) {
+				} 
+				catch (Exception e) 
+				{
 					e.printStackTrace();
 				}
 			}

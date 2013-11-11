@@ -3,6 +3,7 @@ package com.example.svcdev;
 import Fragments.AboutSectionFragment;
 import Fragments.ContactSectionFragment;
 import Fragments.EventsSectionFragment;
+import Fragments.IsOnlineDialogFragment;
 import Fragments.LaunchpadSectionFragment;
 import Fragments.SignupSectionFragment;
 import android.app.ActionBar;
@@ -12,7 +13,10 @@ import android.app.FragmentTransaction;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -24,53 +28,78 @@ import android.view.MenuItem;
 import android.webkit.WebView;
 import android.widget.Toast;
 
-public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
+public class MainActivity extends FragmentActivity implements ActionBar.TabListener 
+{
 	
-	AppSectionsPagerAdapter mAppSectionsPagerAdapter;
+  AppSectionsPagerAdapter mAppSectionsPagerAdapter;
 	ViewPager mViewPager;
 	WebView eWebView;
 	
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        mAppSectionsPagerAdapter = new AppSectionsPagerAdapter(getSupportFragmentManager());
-        final ActionBar actionBar = getActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#2E6444")));
-        actionBar.setHomeButtonEnabled(false);
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        mViewPager = (ViewPager) findViewById(R.id.pager);
-        mViewPager.setOffscreenPageLimit(5);
-        mViewPager.setAdapter(mAppSectionsPagerAdapter);
-        mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
-        	@Override
-        	public void onPageSelected(int position) {
-        		actionBar.setSelectedNavigationItem(position);
-        	}
-        });
-        
-        for (int i = 0; i < mAppSectionsPagerAdapter.getCount(); i++) {
-        	actionBar.addTab(
-        			actionBar.newTab()
-        					.setText(mAppSectionsPagerAdapter.getPageTitle(i))
-        					.setTabListener(this));
-        }
+  @Override
+  protected void onCreate(Bundle savedInstanceState) 
+  {
+      super.onCreate(savedInstanceState);
+      setContentView(R.layout.activity_main);
+      mAppSectionsPagerAdapter = new AppSectionsPagerAdapter(getSupportFragmentManager());
+      final ActionBar actionBar = getActionBar();
+      actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#2E6444")));
+      actionBar.setHomeButtonEnabled(false);
+      actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+      mViewPager = (ViewPager) findViewById(R.id.pager);
+      mViewPager.setOffscreenPageLimit(5);
+      mViewPager.setAdapter(mAppSectionsPagerAdapter);
+      mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() 
+      {
+      	@Override
+      	public void onPageSelected(int position) 
+      	{
+      		actionBar.setSelectedNavigationItem(position);
+      	}
+      });
+      
+      for (int i = 0; i < mAppSectionsPagerAdapter.getCount(); i++) 
+      {
+      	actionBar.addTab(
+      			actionBar.newTab()
+      					.setText(mAppSectionsPagerAdapter.getPageTitle(i))
+      					.setTabListener(this));
+      }
+      if (!isOnline())
+      {
+      	DialogFragment newFragment = new IsOnlineDialogFragment();
+        newFragment.show(getSupportFragmentManager(), "isonline");
+      }
+      
+  }
+  
+  public boolean isOnline() 
+  {
+    ConnectivityManager cm =
+        (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+    NetworkInfo netInfo = cm.getActiveNetworkInfo();
+    if (netInfo != null && netInfo.isConnectedOrConnecting()) 
+    {
+        return true;
     }
+    return false;
+  }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true; 
-    }
-    
-    @Override
-  	public boolean onOptionsItemSelected(MenuItem item) {
-  		// TODO Auto-generated method stub
-  		switch (item.getItemId()) {
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) 
+  {
+      // Inflate the menu; this adds items to the action bar if it is present.
+      getMenuInflater().inflate(R.menu.main, menu);
+      return true; 
+  }
+  
+  @Override
+	public boolean onOptionsItemSelected(MenuItem item) 
+  {
+		switch (item.getItemId()) 
+		{
   		case R.id.itemMeets:
   			Context context = getApplicationContext();
-  			CharSequence text = "svc@binghamtonsa.org \nPlease contact us to be added to the listserv for news and meeting details.";
+  			CharSequence text = "svc@binghamtonsa.org \n Contact us to be added to the listserv for news and meeting details.";
   			int duration = Toast.LENGTH_LONG;
   			Toast toast = Toast.makeText(context, text, duration);
   			toast.setGravity(Gravity.CENTER, 0, 0);
@@ -79,60 +108,64 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
   		case R.id.source:
   			new AlertDialog.Builder(this)
   	    .setTitle("Developers")
-  	    .setMessage("This project was completed as open-source by members of the Binghamton Computer Science Research Alliance, now known as the Binghamton ACM Chapter.\n\nDeveloper: \nChristopher Zhang (christopherzhang3@gmail.com) \n\nDesign: \nCheng Lin (khuang13@binghamton.edu) \n\nPlease email us with bugs, fixes, or improvements you would like to see.\n\nNew project ideas or proposals are also welcome.\n\n Contact acm.projects@binghamton.edu").show();
+  	    .setMessage("This project is maintained as open-source by members of the Binghamton Computer Science Research Alliance, now known as the Binghamton ACM Chapter.\n\nDeveloper: \nChristopher Zhang (christopherzhang3@gmail.com) \n\nDesign: \nCheng Lin (khuang13@binghamton.edu) \n\nPlease email us with bugs, fixes, or improvements you would like to see.\n\nNew project ideas or proposals are also welcome.\n\n Contact acm.projects@binghamton.edu").show();
   			return true;
   		default: 
   			return true;
-  		}	
-  		
-  	}
-  	
-
+		}	
+  }
 
 	@Override
-	public void onTabReselected(Tab arg0, FragmentTransaction arg1) {
+	public void onTabReselected(Tab arg0, FragmentTransaction arg1) 
+	{
 	}
 
-
 	@Override
-	public void onTabSelected(Tab arg0, FragmentTransaction arg1) {
+	public void onTabSelected(Tab arg0, FragmentTransaction arg1) 
+	{
 		mViewPager.setCurrentItem(arg0.getPosition());
 	}
 
-
 	@Override
-	public void onTabUnselected(Tab arg0, FragmentTransaction arg1) {
+	public void onTabUnselected(Tab arg0, FragmentTransaction arg1) 
+	{
 	}
     
-	public static class AppSectionsPagerAdapter extends FragmentPagerAdapter {
+	public static class AppSectionsPagerAdapter extends FragmentPagerAdapter 
+	{
 		
-		public AppSectionsPagerAdapter(FragmentManager fm) {
+		public AppSectionsPagerAdapter(FragmentManager fm) 
+		{
 			super(fm);
 		}
 
 		@Override
-		public Fragment getItem(int arg0) {
-			switch (arg0) {
-			case 0:
-				return new LaunchpadSectionFragment();
-			case 1:
-				return new AboutSectionFragment();
-			case 2:
-				return new EventsSectionFragment();
-			case 3:
-				return new SignupSectionFragment();
-			default:
-				return new ContactSectionFragment();
+		public Fragment getItem(int arg0) 
+		{
+			switch (arg0) 
+			{
+				case 0:
+					return new LaunchpadSectionFragment();
+				case 1:
+					return new AboutSectionFragment();
+				case 2:
+					return new EventsSectionFragment();
+				case 3:
+					return new SignupSectionFragment();
+				default:
+					return new ContactSectionFragment();
 			}
 		}
 
 		@Override
-		public int getCount() {
+		public int getCount() 
+		{
 			return 5;
 		}
 		
 		@Override
-		public CharSequence getPageTitle(int position) {
+		public CharSequence getPageTitle(int position) 
+		{
 			String[] tabTitles = {"Home", "About", "Events", "Signup", "Contact"};
 			return tabTitles[position];
 		}

@@ -9,12 +9,15 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
-public class GetEBoard {
+public class GetEBoard 
+{
 	
-	public String getInternetData() throws Exception{
+	public String getInternetData() throws Exception
+	{
 		BufferedReader in = null;
 		String data = null;
-		try{
+		try
+		{
 			HttpClient client = new DefaultHttpClient();
 			URI website = new URI("http://www.busvc.blogspot.com/p/about.html");
 			HttpGet request = new HttpGet();
@@ -25,7 +28,8 @@ public class GetEBoard {
 			String l = "";
 			String nl = System.getProperty("line.separator");
 			boolean start = false;
-			while ((l = in.readLine()) !=null){
+			while ((l = in.readLine()) !=null)
+			{
 				if (l.contains("Executive Board</span>"))
 				{
 					start = true;
@@ -45,16 +49,21 @@ public class GetEBoard {
 			data = sb.toString();
 			
 			return data;
-		} finally {
-			if (in != null) {
-				try {
+		} 
+		finally 
+		{
+			if (in != null) 
+			{
+				try 
+				{
 					in.close();
 					return data;
-				} catch (Exception e) {
+				} 
+				catch (Exception e) 
+				{
 					e.printStackTrace();
 				}
 			}
 		}
 	}
-
 }
