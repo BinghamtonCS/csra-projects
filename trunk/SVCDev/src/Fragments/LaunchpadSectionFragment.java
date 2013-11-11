@@ -40,8 +40,8 @@ import android.widget.TextView;
 import com.example.svcdev.R;
 
 
-public class LaunchpadSectionFragment extends Fragment {
-	
+public class LaunchpadSectionFragment extends Fragment 
+{
 	View rootView;
 	ImageView showMeTheMoney;
 	ImageView showMeTheMoney2;
@@ -59,7 +59,8 @@ public class LaunchpadSectionFragment extends Fragment {
 	final String APISECRET = "vvNBeseEzWlfZMCwMMMbqE9XQiLAmu1XdvLJwXJUM";
 	
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) 
+	{
 		rootView = inflater.inflate(R.layout.fragment_section_launchpad, container, false);
 		
 		showMeTheMoney = (ImageView) rootView.findViewById(R.id.iv1);
@@ -70,9 +71,11 @@ public class LaunchpadSectionFragment extends Fragment {
 		showMeTheMoney6 = (ImageView) rootView.findViewById(R.id.iv6);
 		
 		Button btn_bearer_token = (Button) rootView.findViewById(R.id.bGetBearerToken);
-		btn_bearer_token.setOnClickListener(new OnClickListener() {
+		btn_bearer_token.setOnClickListener(new OnClickListener() 
+		{
 			@Override
-			public void onClick(View v) {
+			public void onClick(View v) 
+			{
 				new GetBearerTokenTask().execute();
 			}
 		});
@@ -81,14 +84,16 @@ public class LaunchpadSectionFragment extends Fragment {
 		return rootView;
 	}
 	
-	public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+	public class DownloadImageTask extends AsyncTask<String, Void, Bitmap>
+	{
 		
 		protected Bitmap doInBackground(String... urls) {
 			
 			return loadImageFromNetwork(urls[0]);
 		}
 		
-		protected void onPostExecute(Bitmap result) {
+		protected void onPostExecute(Bitmap result) 
+		{
 			showMeTheMoney.setImageBitmap(result);
 			showMeTheMoney2.setImageBitmap(bmp2);
 			showMeTheMoney3.setImageBitmap(bmp3);
@@ -96,20 +101,23 @@ public class LaunchpadSectionFragment extends Fragment {
 			showMeTheMoney5.setImageBitmap(bmp5);
 			showMeTheMoney6.setImageBitmap(bmp6);
 			
-			 new CountDownTimer(3000, 1) { 
+			 new CountDownTimer(3000, 1) 
+			 { 
 				 	
-	        public void onTick(long millisUntilFinished) { 
+	        public void onTick(long millisUntilFinished) 
+	        { 
 	        		HorizontalScrollView hv = (HorizontalScrollView) rootView.findViewById(R.id.hsv);
 	            hv.scrollTo((int) (2000 - millisUntilFinished), 0); 
 	        } 
 
-	        public void onFinish() { 
-
+	        public void onFinish()
+	        { 
 	        } 
 	     }.start();
 		}
 
-		private Bitmap loadImageFromNetwork(String url) {
+		private Bitmap loadImageFromNetwork(String url) 
+		{
 			try{
 				Bitmap bitmap = BitmapFactory.decodeStream((InputStream)new URL(url).getContent());
 				bmp2 = BitmapFactory.decodeStream((InputStream)new URL("https://dl.dropboxusercontent.com/u/93134791/SVC%20Images/2.jpg").getContent());
@@ -125,122 +133,130 @@ public class LaunchpadSectionFragment extends Fragment {
 		}
 	}
 	
-protected class GetBearerTokenTask extends AsyncTask<Void, Void, String> {
-  	
-    @Override
-protected String doInBackground(Void... params) {
+	protected class GetBearerTokenTask extends AsyncTask<Void, Void, String> 
+	{
+	    @Override
+	    protected String doInBackground(Void... params) 
+	    {
+				try
+				{
+					DefaultHttpClient httpclient = new DefaultHttpClient(new BasicHttpParams());
+					HttpPost httppost = new HttpPost("https://api.twitter.com/oauth2/token");
+					
+					String apiString = APIKEY + ":" + APISECRET;
+					String authorization = "Basic " + Base64.encodeToString(apiString.getBytes(), Base64.NO_WRAP);
+			
+					httppost.setHeader("Authorization", authorization);
+					httppost.setHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
+					httppost.setEntity(new StringEntity("grant_type=client_credentials"));
+			
+					InputStream inputStream = null;
+					HttpResponse response = httpclient.execute(httppost);
+					HttpEntity entity = response.getEntity();
+			
+					inputStream = entity.getContent();
+					BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"), 8);
+					StringBuilder sb = new StringBuilder();
+			
+					String line = null;
+					while ((line = reader.readLine()) != null)
+					{
+					    sb.append(line + "\n");
+					}
+					return sb.toString();
+				}
+				catch (Exception e)
+				{
+					Log.e("GetBearerTokenTask", "Error:" + e.getMessage());
+					return null;
+				}
+	    }
 	
-	try {
-		DefaultHttpClient httpclient = new DefaultHttpClient(new BasicHttpParams());
-		HttpPost httppost = new HttpPost("https://api.twitter.com/oauth2/token");
-		
-		String apiString = APIKEY + ":" + APISECRET;
-		String authorization = "Basic " + Base64.encodeToString(apiString.getBytes(), Base64.NO_WRAP);
-
-		httppost.setHeader("Authorization", authorization);
-		httppost.setHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
-		httppost.setEntity(new StringEntity("grant_type=client_credentials"));
-
-		InputStream inputStream = null;
-		HttpResponse response = httpclient.execute(httppost);
-		HttpEntity entity = response.getEntity();
-
-		inputStream = entity.getContent();
-		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"), 8);
-		StringBuilder sb = new StringBuilder();
-
-		String line = null;
-		while ((line = reader.readLine()) != null)
+		@Override
+		protected void onPostExecute(String jsonText)
 		{
-		    sb.append(line + "\n");
+			try 
+			{
+				JSONObject root = new JSONObject(jsonText);
+				String bearer_token = root.getString("access_token");	
+				new GetFeedTask().execute(bearer_token, URL);
+			}
+			catch (Exception e)
+			{
+				Log.e("GetBearerTokenTask", "Error:" + e.getMessage());
+			}
 		}
-		
-		return sb.toString();
-		
-		
-	}catch (Exception e){
-		Log.e("GetBearerTokenTask", "Error:" + e.getMessage());
-		return null;
 	}
-}
 
-@Override
-protected void onPostExecute(String jsonText){
-	try {
-		JSONObject root = new JSONObject(jsonText);
-		String bearer_token = root.getString("access_token");	
-		new GetFeedTask().execute(bearer_token, URL);
-	}catch (Exception e){
-		Log.e("GetBearerTokenTask", "Error:" + e.getMessage());
-	}
-}
-}
-
-protected class GetFeedTask extends AsyncTask<String, Void, String> {
-
-  @Override
-protected String doInBackground(String... params) {
+	protected class GetFeedTask extends AsyncTask<String, Void, String> 
+	{
+	  @Override
+	  protected String doInBackground(String... params) 
+	  {
+			try 
+			{
+				DefaultHttpClient httpclient = new DefaultHttpClient(new BasicHttpParams());
+				HttpGet httpget = new HttpGet(params[1]);
+				httpget.setHeader("Authorization", "Bearer " + params[0]);
+				httpget.setHeader("Content-type", "application/json");
+		
+				InputStream inputStream = null;
+				HttpResponse response = httpclient.execute(httpget);
+				HttpEntity entity = response.getEntity();
+		
+				inputStream = entity.getContent();
+				BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"), 8);
+				StringBuilder sb = new StringBuilder();
+		
+				String line = null;
+				while ((line = reader.readLine()) != null)
+				{
+					sb.append(line + "\n");
+				}
+				return sb.toString();
+			}
+			catch (Exception e)
+			{
+				Log.e("GetFeedTask", "Error:" + e.getMessage());
+				return null;
+			}
+	  }
 	
-	try {
-		DefaultHttpClient httpclient = new DefaultHttpClient(new BasicHttpParams());
-		HttpGet httpget = new HttpGet(params[1]);
-		httpget.setHeader("Authorization", "Bearer " + params[0]);
-		httpget.setHeader("Content-type", "application/json");
-
-		InputStream inputStream = null;
-		HttpResponse response = httpclient.execute(httpget);
-		HttpEntity entity = response.getEntity();
-
-		inputStream = entity.getContent();
-		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"), 8);
-		StringBuilder sb = new StringBuilder();
-
-		String line = null;
-		while ((line = reader.readLine()) != null)
+		@Override
+		protected void onPostExecute(String jsonText)
 		{
-			sb.append(line + "\n");
+			try 
+			{
+				LinearLayout ll = (LinearLayout) rootView.findViewById(R.id.linearloftweets);
+				if(((LinearLayout) ll).getChildCount() > 0) 
+			    ((LinearLayout) ll).removeAllViews(); 
+				ArrayList<String> tweetList = new ArrayList<String>();
+				JSONArray yourjsonarray = new JSONArray(jsonText);
+				for(int i =0;i<yourjsonarray.length();i++)
+				{
+				String tweet =yourjsonarray.getJSONObject(i).getString("text");
+				
+				tweetList.add(tweet);
+				}
+				for (int i = 0; i < tweetList.size(); i++)
+				{
+						TextView temp = new TextView(getActivity());
+						temp.setTextSize(18);
+						temp.setAutoLinkMask(Linkify.ALL);
+						temp.setText(tweetList.get(i));
+						temp.setTypeface(Typeface.SERIF);
+						if (i % 2 == 0)
+							temp.setBackgroundColor(Color.parseColor("#78AB46"));
+						else
+							temp.setBackgroundColor(Color.WHITE);
+						temp.setPadding(10, 10, 10, 10);
+						ll.addView(temp);
+				}
+			}
+			catch (Exception e)
+			{
+				Log.e("GetFeedTask", "Error:" + e.getMessage());
+			}
 		}
-		return sb.toString();
-	}catch (Exception e){
-		Log.e("GetFeedTask", "Error:" + e.getMessage());
-		return null;
-	}
-}
-
-@Override
-protected void onPostExecute(String jsonText){
-	try {
-		//TextView txt = (TextView) rootView.findViewById(R.id.tvTwitter);
-		LinearLayout ll = (LinearLayout) rootView.findViewById(R.id.linearloftweets);
-		if(((LinearLayout) ll).getChildCount() > 0) 
-	    ((LinearLayout) ll).removeAllViews(); 
-		ArrayList<String> tweetList = new ArrayList<String>();
-		JSONArray yourjsonarray = new JSONArray(jsonText);
-		for(int i =0;i<yourjsonarray.length();i++)
-		{
-		String tweet =yourjsonarray.getJSONObject(i).getString("text");
-		
-		tweetList.add(tweet);
-		}
-		for (int i = 0; i < tweetList.size(); i++)
-		{
-				TextView temp = new TextView(getActivity());
-				temp.setTextSize(18);
-				temp.setAutoLinkMask(Linkify.ALL);
-				temp.setText(tweetList.get(i));
-				temp.setTypeface(Typeface.SERIF);
-				if (i % 2 == 0)
-					temp.setBackgroundColor(Color.parseColor("#78AB46"));
-				else
-					temp.setBackgroundColor(Color.WHITE);
-				temp.setPadding(10, 10, 10, 10);
-				ll.addView(temp);
-		}
-	}catch (Exception e){
-		Log.e("GetFeedTask", "Error:" + e.getMessage());
-	}
-}
-}
-	
-	
+	}	
 }

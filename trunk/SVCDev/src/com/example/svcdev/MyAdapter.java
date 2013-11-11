@@ -12,14 +12,15 @@ import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
-public class MyAdapter extends BaseExpandableListAdapter {
+public class MyAdapter extends BaseExpandableListAdapter 
+{
 	
 	private Context context;
 	private String[] parentList;
 	private String[][] childList;
 	
-	public void initialize() {
-		
+	public void initialize() 
+	{
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build();	
 		StrictMode.setThreadPolicy(policy);
 		
@@ -32,16 +33,20 @@ public class MyAdapter extends BaseExpandableListAdapter {
 		String volunteerHours = "No Internet connection.";
 		String eboard ="See Contact Tab";
 		
-		try {
+		try 
+		{
 			missionStatement = getMS.getInternetData();		
 			membershipInfo = getMI.getInternetData();
 			volunteerHours = getVH.getInternetData();
-		} catch (Exception e) {
+		} 
+		catch (Exception e) 
+		{
 			e.printStackTrace();
 		}
 		
 		parentList = new String[]{"Mission Statement", "Membership", "Volunteer Hours", "Current Executive Board"};
-		childList = new String[][]{
+		childList = new String[][]
+		{
 				{
 					missionStatement
 				},
@@ -56,28 +61,29 @@ public class MyAdapter extends BaseExpandableListAdapter {
 				}
 		};
 	}
-	
-	
-	public MyAdapter(Context c) {
+
+	public MyAdapter(Context c) 
+	{
 		initialize();
 		context = c;
 	}
 
 	@Override
-	public Object getChild(int arg0, int arg1) {
-		// TODO Auto-generated method stub
+	public Object getChild(int arg0, int arg1) 
+	{
 		return null;
 	}
 
 	@Override
-	public long getChildId(int arg0, int arg1) {
-		// TODO Auto-generated method stub
+	public long getChildId(int arg0, int arg1) 
+	{
 		return 0;
 	}
 
 	@Override
 	public View getChildView(int groupPosition, int childPosition,
-			boolean isLastChild, View convertView, ViewGroup parent) {
+			boolean isLastChild, View convertView, ViewGroup parent) 
+	{
 		TextView tv = new TextView(context);
 		tv.setText(Html.fromHtml(childList[groupPosition][childPosition]));
 		tv.setPadding(80, 10, 10, 10);
@@ -86,32 +92,33 @@ public class MyAdapter extends BaseExpandableListAdapter {
 	}
 
 	@Override
-	public int getChildrenCount(int groupPosition) {
-		// TODO Auto-generated method stub
+	public int getChildrenCount(int groupPosition) 
+	{
 		return childList[groupPosition].length;
 	}
 
 	@Override
-	public Object getGroup(int groupPosition) {
-		// TODO Auto-generated method stub
+	public Object getGroup(int groupPosition) 
+	{
 		return groupPosition;
 	}
 
 	@Override
-	public int getGroupCount() {
-		// TODO Auto-generated method stub
+	public int getGroupCount() 
+	{
 		return parentList.length;
 	}
 
 	@Override
-	public long getGroupId(int groupPosition) {
-		// TODO Auto-generated method stub
+	public long getGroupId(int groupPosition) 
+	{
 		return groupPosition;
 	}
 
 	@Override
 	public View getGroupView(int groupPosition, boolean isExpanded,
-			View convertView, ViewGroup parent) {
+			View convertView, ViewGroup parent) 
+	{
 		TextView tv = new TextView(context);
 		tv.setText(parentList[groupPosition]);
 		tv.setPadding(50, 10, 10, 10);
@@ -121,15 +128,14 @@ public class MyAdapter extends BaseExpandableListAdapter {
 	}
 
 	@Override
-	public boolean hasStableIds() {
-		// TODO Auto-generated method stub
+	public boolean hasStableIds() 
+	{
 		return false;
 	}
 
 	@Override
-	public boolean isChildSelectable(int groupPosition, int childPosition) {
-		// TODO Auto-generated method stub
+	public boolean isChildSelectable(int groupPosition, int childPosition) 
+	{
 		return true;
 	}
-
 }

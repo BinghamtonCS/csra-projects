@@ -9,12 +9,14 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.client.methods.HttpGet;
 
-public class GetMissionStatement {
-
-	public String getInternetData() throws Exception{
+public class GetMissionStatement 
+{
+	public String getInternetData() throws Exception
+	{
 		BufferedReader in = null;
 		String data = null;
-		try{
+		try
+		{
 			HttpClient client = new DefaultHttpClient();
 			URI website = new URI("http://www.busvc.blogspot.com/p/about.html");
 			HttpGet request = new HttpGet();
@@ -25,7 +27,8 @@ public class GetMissionStatement {
 			String l = "";
 			String nl = System.getProperty("line.separator");
 			boolean start = false;
-			while ((l = in.readLine()) !=null) {
+			while ((l = in.readLine()) !=null) 
+			{
 				if (l.contains(">Mission Statement"))
 				{
 					start = true;
@@ -48,8 +51,11 @@ public class GetMissionStatement {
 			sb.append("</html>");
 			data = sb.toString();
 			return data;
-		} finally {
-			if (in != null) {
+		} 
+		finally 
+		{
+			if (in != null) 
+			{
 				try {
 					in.close();
 					return data;
@@ -60,6 +66,3 @@ public class GetMissionStatement {
 		}
 	}
 }
-			
-			
-			

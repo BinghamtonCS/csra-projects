@@ -10,12 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 
-public class AboutSectionFragment extends Fragment {
+public class AboutSectionFragment extends Fragment 
+{
 	
 	ExpandableListView exv;
 	
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) 
+	{
 		View rootView = inflater.inflate(R.layout.fragment_section_about, container, false);
 		exv = (ExpandableListView) rootView.findViewById(R.id.expandableListView1);
 		Context c = getActivity();

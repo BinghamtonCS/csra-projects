@@ -11,23 +11,27 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class ContactSectionFragment extends Fragment {
-	
+public class ContactSectionFragment extends Fragment 
+{
 	View rootView;
 	TextView eboard;
 	
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) 
+	{
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build();	
 		StrictMode.setThreadPolicy(policy);
 		rootView = inflater.inflate(R.layout.fragment_section_contact, container, false);	
 		eboard = (TextView) rootView.findViewById(R.id.tvEboard);
 		GetEBoard getter = new GetEBoard();
-		try {
+		try 
+		{
 			String returned = getter.getInternetData();
 			eboard.setText(Html.fromHtml(returned));
 			eboard.setTextSize(19);
-		} catch (Exception e) {
+		} 
+		catch (Exception e) 
+		{
 			e.printStackTrace();
 		}
 		return rootView;

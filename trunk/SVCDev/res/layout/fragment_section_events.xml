@@ -6,9 +6,11 @@
     android:background="@drawable/gradient">
     
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        android:orientation="horizontal">
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
 	    <ImageButton
 	        android:id="@+id/ibRefresh"
 	        android:layout_width="wrap_content"
@@ -22,6 +24,12 @@
 	        android:layout_height="wrap_content"
 	        android:text="Most Recent Update Attempt: "
 	        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+	    <ImageButton
+	        android:id="@+id/ibAddToCalendar"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@android:drawable/ic_menu_month" />
 
 	</LinearLayout>
 	
