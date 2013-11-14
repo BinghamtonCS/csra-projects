@@ -12,10 +12,7 @@ import android.widget.Button;
 public class ContactActivity extends Activity
 {
 	
-	//webview.loadUrl("javascript:(function() { " +
-  //  "var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig; " +
-    //"document.getElementsByTagName('body')[0].innerHTML =  document.getElementsByTagName('body')[0].innerHTML.replace(exp,'<a href='$1'>$1</a>');" +
-   // "})()");
+	//readURL to get info
 	
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

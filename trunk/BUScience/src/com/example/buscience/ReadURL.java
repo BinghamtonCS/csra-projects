@@ -2,9 +2,45 @@ package com.example.buscience;
 import java.net.*;
 import java.io.*;
 
-public class ReadURL {
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
 
-	//finds keyword "seek" on page urlStr
+public class ReadURL {
+	public String read(String url, String seek){
+		try{
+			HttpClient c = new DefaultHttpClient();
+			HttpGet get = new HttpGet();
+			get.setURI(new URI(url));
+
+			HttpResponse response = c.execute(get);
+			BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+
+			String line;
+			while((line = in.readLine()) != null){
+				//find just the URL part of the line
+				//System.out.println(line);
+				int beg = line.indexOf("src");
+				//System.out.println(beg);
+				//System.out.println(line.charAt(beg));
+				String line2 = line.substring(beg);
+				//System.out.println(line2);
+				int end = line.indexOf('"', beg+6);
+				//System.out.println(end);
+				String retval = line.substring(beg, end+1);
+				//System.out.println(retval);
+				return retval;
+			}
+			in.close();
+		}catch (Exception e){
+
+		}
+		return null;
+	}
+}
+	/*
+//finds keyword "seek" on page urlStr
 	public String read(String urlStr, String seek){
 		try{
 			// get the requested URL
@@ -40,6 +76,4 @@ public class ReadURL {
 			System.err.println(e);
 		}
 		return urlStr;
-	}
-
-}
+	}*/
