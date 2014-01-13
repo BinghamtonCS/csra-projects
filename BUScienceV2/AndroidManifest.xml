@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.buscience.activities"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:theme="@style/CustomTheme" 
+        android:hardwareAccelerated="true">
+        
+        <activity
+            android:name="com.buscience.activities.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:hardwareAccelerated="true"  >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.buscience.activities.HomeActivity"
+            android:label="@string/title_activity_home" >
+        </activity>
+        <activity
+            android:name="com.buscience.activities.ElemTeacherRegActivity"
+            android:label="@string/title_activity_registration"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:parentActivityName="MainActivity">            
+        </activity>
+        <activity
+            android:name="com.buscience.activities.UnivStudentRegActivity"
+            android:label="@string/title_activity_registration"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:parentActivityName="MainActivity">
+        </activity>
+        <activity
+            android:name="com.buscience.activities.CalendarActivity"
+            android:label="@string/title_activity_calendar"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:parentActivityName="MainActivity" >
+        </activity>
+        <activity
+            android:name="com.buscience.activities.LessonActivity"
+            android:label="@string/title_activity_lesson"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:parentActivityName="MainActivity" >
+        </activity>
+        <activity
+            android:name="com.buscience.activities.TablingActivity"
+            android:label="@string/title_activity_tabling" >
+        </activity>
+        <activity
+            android:name="com.buscience.activities.AboutUsActivity"
+            android:label="@string/title_activity_aboutUs"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:parentActivityName="MainActivity" >
+        </activity>
+    </application>
+    
+
+</manifest>
