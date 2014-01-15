@@ -40,7 +40,6 @@ public class CertificationFragment extends Fragment {
                 
     	final ProgressBar pbar = (ProgressBar)v.findViewById(R.id.progressBar);
     	
-    	
         final WebView web = (WebView)v.findViewById(R.id.certView);
         web.setWebViewClient(new WebViewClient(){
         	

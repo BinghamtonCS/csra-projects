@@ -10,10 +10,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.buscience.activities.ElemTeacherRegActivity;
-import com.buscience.activities.MainActivity;
-import com.buscience.activities.R;
-import com.buscience.activities.UnivStudentRegActivity;
+import com.buscience.activities.*;
 
 public class RegistrationFragment extends Fragment {
     
@@ -29,7 +26,7 @@ public class RegistrationFragment extends Fragment {
 
 			@Override
 			public void onClick(View arg0) {
-				Intent intent = new Intent(RegistrationFragment.this.getActivity(), ElemTeacherRegActivity.class);
+				Intent intent = new Intent(RegistrationFragment.this.getActivity(), SchoolTeacherActivity.class); //ElemTeacherRegActivity.class);
 				RegistrationFragment.this.startActivity(intent);	
 				RegistrationFragment.this.getActivity().overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
 

@@ -9,19 +9,18 @@
         android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-    
+
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:theme="@style/CustomTheme" 
-        android:hardwareAccelerated="true">
-        
+        android:theme="@style/CustomTheme" >
         <activity
             android:name="com.buscience.activities.MainActivity"
+            android:hardwareAccelerated="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light"
-            android:hardwareAccelerated="true"  >
+            android:theme="@style/Theme.AppCompat.Light" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,29 +31,29 @@
             android:name="com.buscience.activities.HomeActivity"
             android:label="@string/title_activity_home" >
         </activity>
-        <activity
+        <!--activity
             android:name="com.buscience.activities.ElemTeacherRegActivity"
             android:label="@string/title_activity_registration"
-            android:theme="@style/Theme.AppCompat.Light"
-            android:parentActivityName="MainActivity">            
-        </activity>
+            android:parentActivityName="MainActivity"
+            android:theme="@style/Theme.AppCompat.Light" >
+        </activity-->
         <activity
             android:name="com.buscience.activities.UnivStudentRegActivity"
             android:label="@string/title_activity_registration"
-            android:theme="@style/Theme.AppCompat.Light"
-            android:parentActivityName="MainActivity">
+            android:parentActivityName="MainActivity"
+            android:theme="@style/Theme.AppCompat.Light" >
         </activity>
         <activity
             android:name="com.buscience.activities.CalendarActivity"
             android:label="@string/title_activity_calendar"
-            android:theme="@style/Theme.AppCompat.Light"
-            android:parentActivityName="MainActivity" >
+            android:parentActivityName="MainActivity"
+            android:theme="@style/Theme.AppCompat.Light" >
         </activity>
         <activity
             android:name="com.buscience.activities.LessonActivity"
             android:label="@string/title_activity_lesson"
-            android:theme="@style/Theme.AppCompat.Light"
-            android:parentActivityName="MainActivity" >
+            android:parentActivityName="MainActivity"
+            android:theme="@style/Theme.AppCompat.Light" >
         </activity>
         <activity
             android:name="com.buscience.activities.TablingActivity"
@@ -63,10 +62,15 @@
         <activity
             android:name="com.buscience.activities.AboutUsActivity"
             android:label="@string/title_activity_aboutUs"
-            android:theme="@style/Theme.AppCompat.Light"
-            android:parentActivityName="MainActivity" >
+            android:parentActivityName="MainActivity"
+            android:theme="@style/Theme.AppCompat.Light" >
+        </activity>
+        <activity
+            android:name="com.buscience.activities.SchoolTeacherActivity"
+            android:label="@string/title_activity_school_teacher"
+            android:parentActivityName="MainActivity"
+            android:theme="@style/Theme.AppCompat.Light" >
         </activity>
     </application>
-    
 
 </manifest>
