@@ -1,7 +1,14 @@
 package com.buscience.fragments;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URI;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -38,14 +45,14 @@ public class ContactFragment extends Fragment {
     	this.getActivity().setTitle("Contact");
     	
     	MainActivity act = ((MainActivity)(this.getActivity()));
-         act.getMDrawerList().setItemChecked(4, true);
-         act.getMDrawerList().setSelection(4);
-         act.setCurrentPosition(4);
+		act.getMDrawerList().setItemChecked(4, true);
+		act.getMDrawerList().setSelection(4);
+		act.setCurrentPosition(4);
     }
     
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        
+    public void onActivityCreated(Bundle savedInstanceState) 
+    {    
     	super.onActivityCreated(savedInstanceState);
     	
     	this.getActivity().setTitle("Contact");
@@ -53,8 +60,7 @@ public class ContactFragment extends Fragment {
 
         act.getMDrawerList().setItemChecked(4, true);
         act.getMDrawerList().setSelection(4);
-        act.setCurrentPosition(4);
-        	        
+        act.setCurrentPosition(4); 
     }
     
     public void loadContactPage(String url)
@@ -62,47 +68,72 @@ public class ContactFragment extends Fragment {
     	final ProgressBar pbar = (ProgressBar)view.findViewById(R.id.progressBar);
     	//pbar.setVisibility(ProgressBar.VISIBLE);
   
-        
         WebView web = (WebView)view.findViewById(R.id.eboard);
         web.setWebViewClient(new WebViewClient()
         {
-        	
         	@Override
         	public void onPageFinished(WebView view, String ur)
         	{
         		pbar.setVisibility(ProgressBar.GONE);
         	}
-        	
-        	
         });
 
         web.loadUrl(url);
     }
     
-    private class ContactLoader extends AsyncTask<String, Integer, String> {
-	     protected String doInBackground(String... urls) {
-				Document doc;
-				
-				String str = "";
-				
-				try {
-					doc = Jsoup.connect(urls[0]).get();
-					str = doc.select("iframe").attr("src");
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				
-	         return str;
-	     }
+	public void getEboard(String url)
+	{
+		try
+		{
+			HttpClient c = new DefaultHttpClient();
+			HttpGet get = new HttpGet();
+			get.setURI(new URI(url));
 
-	     protected void onProgressUpdate(Integer... progress) {
+			HttpResponse response = c.execute(get);
+			BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
 
-	    	 
-	     }
+			String s;
+			while((s=in.readLine())!=null){
+				//layout.add(text field)
+				//look for eboard info
+				//frames
+				//textviews
+				//pictures
+				//email links
+			}
+			in.close();
+		}catch(Exception e){
 
-	     protected void onPostExecute(String result) {
-	    	 loadContactPage(result);
-	     }
-  }
+		}
+	}
+    
+    private class ContactLoader extends AsyncTask<String, Integer, String> 
+    {
+		protected String doInBackground(String... urls) 
+	    {
+			Document doc;
+			String str = "";
+			
+			try {
+				//getEboard("https://docs.google.com/document/preview?hgd=1&id=1ah8eefcuLkjBZ07CPhLgW51N2Ck6osb4E9S4KGR3pIA&pli=1");
+				//		or following two lines
+				doc = Jsoup.connect(urls[0]).get();
+				str = doc.select("iframe").attr("src");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+				
+	        return str;
+	    }
+
+	    protected void onProgressUpdate(Integer... progress) {}
+
+	    protected void onPostExecute(String result) 
+	    {
+	    	//dynamically add components to view
+	    	// 		or the follwoing
+	    	loadContactPage(result);
+	    }
+	}
 }
