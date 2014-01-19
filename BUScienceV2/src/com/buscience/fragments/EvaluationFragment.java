@@ -22,12 +22,12 @@ public class EvaluationFragment extends Fragment {
 	
 	View view; 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) 
+    {
     	view = inflater.inflate(R.layout.evaluation_layout, container, false);        
     	new EvaluationLoader().execute("http://www.buscience.org/Evaluation");
     	
         return view;       
-        
     }
     
     public void loadEvaluationPage(String url)
@@ -37,13 +37,11 @@ public class EvaluationFragment extends Fragment {
         WebView web = (WebView)view.findViewById(R.id.evaluation);
         web.setWebViewClient(new WebViewClient()
         {
-        	
         	@Override
         	public void onPageFinished(WebView view, String ur)
         	{
         		pbar.setVisibility(ProgressBar.GONE);
         	}
-        	
         });
         web.loadDataWithBaseURL("https://docs.google.com/spreadsheet/embeddedform?bc=transparent&f=%2522Georgia%2522%252C%2Bserif&hl=en&htc=%2523666666&key=0AphPhvpO0nOPdGZIU0JaVEYxaTh2UjNaNk1rRWpOenc&lc=%2523135355&pli=1&tc=%2523565555&ttl=0", url, "text/html", "utf-8", null);
     }
@@ -111,4 +109,27 @@ public class EvaluationFragment extends Fragment {
 	     }
    }
 
+	public void loadURL(String strUrl){
+		((WebView)view.findViewById(R.id.evaluation)).loadUrl(strUrl);
+	}
+
+	private class Load extends AsyncTask <String, Integer, String> {
+		String url;
+
+		@Override
+		protected String doInBackground(String... params) {
+			try{
+				url = new ReadURL().read("http://www.buscience.org/Evaluation", "docs.google.com");
+			}catch (Exception e){
+				return null;
+			}
+			return null;
+		}
+		
+		protected void onPostExecute(String str){
+			loadURL(url);
+		}
+
+	}
+    
 }
