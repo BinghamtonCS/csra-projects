@@ -34,7 +34,6 @@ public class RegistrationFragment extends Fragment {
         	
         });
         
-        
         Button signupTwo = (Button)v.findViewById(R.id.univStudentSignup);
         
         signupTwo.setOnClickListener(new OnClickListener(){
@@ -49,9 +48,18 @@ public class RegistrationFragment extends Fragment {
         	
         });
         
-
+        Button tablingButton = (Button)v.findViewById(R.id.tabling);
         
-        
+        tablingButton.setOnClickListener(new OnClickListener(){
+        	
+        	@Override
+        	public void onClick(View arg0){
+        		Intent intent = new Intent(RegistrationFragment.this.getActivity(), TablingActivity.class);
+				RegistrationFragment.this.startActivity(intent);	
+				RegistrationFragment.this.getActivity().overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
+        		
+        	}
+        });
         
         return v;
     }
