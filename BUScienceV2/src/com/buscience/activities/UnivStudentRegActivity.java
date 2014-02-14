@@ -22,6 +22,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.buscience.fragments.USDriverFragment;
 import com.buscience.fragments.USScheduleFragment;
 import com.buscience.fragments.USSignupFragment;
 import com.buscience.fragments.USUpdateFragment;
@@ -69,6 +70,8 @@ public class UnivStudentRegActivity extends Activity {
         navDrawerItems.add(new NavDrawerItem("\nUpdate\n"));
         // Current Schedule
         navDrawerItems.add(new NavDrawerItem("\nCurrent Schedule\n"));
+        //Driver Registration
+        navDrawerItems.add(new NavDrawerItem("\nRegister As A Driver\n"));
  
         // setting the nav drawer list adapter
         adapter = new NavDrawerListAdapter(getApplicationContext(),
@@ -193,6 +196,9 @@ public class UnivStudentRegActivity extends Activity {
         case 2:
             fragment = new USScheduleFragment();
             break;
+        case 3:
+        	fragment = new USDriverFragment();
+        	break;
  
         default:
             break;
@@ -263,7 +269,6 @@ public class UnivStudentRegActivity extends Activity {
 	@SuppressLint("NewApi")
 	private void displayView(int position) {
 		// update the main content by replacing fragments
-
 		switch (position) {
 		case 0:
 			fragment = new USSignupFragment();
@@ -274,7 +279,9 @@ public class UnivStudentRegActivity extends Activity {
 		case 2:
 			fragment = new USScheduleFragment();
 			break;
-
+		case 3:
+			fragment = new USDriverFragment();
+			break;
 		default:
 			break;
 		}
