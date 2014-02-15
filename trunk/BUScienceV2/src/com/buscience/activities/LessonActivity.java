@@ -20,7 +20,6 @@ import com.buscience.fragments.LessonPlansFragment;
 
 public class LessonActivity extends Activity{
 	
-	
 	@SuppressLint("NewApi")
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
