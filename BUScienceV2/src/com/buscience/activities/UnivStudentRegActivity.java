@@ -20,7 +20,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 
 import com.buscience.fragments.USDriverFragment;
@@ -63,10 +62,7 @@ public class UnivStudentRegActivity extends Activity {
         
  
         navDrawerItems = new ArrayList<NavDrawerItem>();
-        
-        Button button = new Button(this);
-        button.setText("test button");
- 
+         
         // adding nav drawer items to array
         // Sign-up
         navDrawerItems.add(new NavDrawerItem("\nSign-Up\n"));
@@ -74,9 +70,9 @@ public class UnivStudentRegActivity extends Activity {
         navDrawerItems.add(new NavDrawerItem("\nUpdate\n"));
         // Current Schedule
         navDrawerItems.add(new NavDrawerItem("\nCurrent Schedule\n"));
-        //Driver Registration
+        // Driver Registration
         navDrawerItems.add(new NavDrawerItem("\nRegister As A Driver\n"));
-        
+        // Go Back
         navDrawerItems.add(new NavDrawerItem("\nGo Back\n"));
  
         // setting the nav drawer list adapter
