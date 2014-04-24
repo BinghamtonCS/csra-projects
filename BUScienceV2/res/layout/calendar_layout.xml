@@ -5,25 +5,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/TextView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="@color/green1"
-        android:fadingEdge="vertical"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="Please add our calendar to your google calendar to keep updated on meeting times and events held by BU Science!"
-        android:textColor="@color/grey" />
-
     <WebView
         android:id="@+id/calendar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/TextView1" />
+        android:layout_alignParentLeft="true" />
 
         <ProgressBar
             android:id="@+id/progressBar"

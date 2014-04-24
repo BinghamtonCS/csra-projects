@@ -76,12 +76,34 @@ public class CalendarActivity extends Activity{
     	           }
     	       });
     	
-    	builder.setMessage("Filler message. To be edited");
+    	builder.setMessage("Please add our calendar to your google calendar to keep updated on meeting times and events held by BU Science!");
     	// Create the AlertDialog
         AlertDialog dialog = builder.create();
         dialog.show();	
     	
     	return true;
+    }
+    
+    //Generates an AlertDialog when the user button is clicked
+    public boolean onUserClicked(MenuItem item)
+    {    	    	
+    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    	// Add the buttons
+    	builder.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+    	           public void onClick(DialogInterface dialog, int id) {
+    	        	   
+    	           }
+    	       });
+    	
+    	builder.setTitle("Developers");
+    	builder.setMessage("The project is maintained as open-source by members of the Binghamton ACM Chapter.\n\nDevelopers:\n\nCheng Lin (khuang13@binghamton.edu)\n\nAnna Borovitcky (aborovi1@binghamton.edu)\n\nJames Edouard (jedouar1@binghamton.edu)\n\n\nPlease email us with bugs, fixes, or improvements you would like to see.\n\nNew project ideas or proposals are also welcome.\n\n\nContact acm.projects@binghamton.edu");
+
+    	// Create the AlertDialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    	
+    	return true;
+    	
     }
     
     private class CalendarLoader extends AsyncTask<String, Integer, String> {
