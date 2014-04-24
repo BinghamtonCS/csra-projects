@@ -138,8 +138,8 @@ public class UnivStudentRegActivity extends Activity {
         }
         // Handle action bar actions click
         switch (item.getItemId()) {
-        case R.id.action_settings:
-            return true;
+        //case R.id.action_settings:
+            //return true;
         default:
             return super.onOptionsItemSelected(item);
         }
@@ -152,7 +152,7 @@ public class UnivStudentRegActivity extends Activity {
     public boolean onPrepareOptionsMenu(Menu menu) {
         // if nav drawer is opened, hide the action items
         boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
-        menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
+        //menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
         menu.findItem(R.id.help_item).setVisible(!drawerOpen);
         menu.findItem(R.id.refresh_item).setVisible(!drawerOpen);
         menu.findItem(R.id.user_item).setVisible(!drawerOpen);
@@ -229,12 +229,33 @@ public class UnivStudentRegActivity extends Activity {
     	           }
     	       });
     	
-    	builder.setMessage("Filler message. To be edited");
+    	builder.setMessage("If you are a university student, you can use these forms to sign-up or view the current schedule. Use the menu to navigate between forms. ");
     	// Create the AlertDialog
         AlertDialog dialog = builder.create();
         dialog.show();
     	return true;
     	
+    }
+    
+    //Generates an AlertDialog when the user button is clicked
+    public boolean onUserClicked(MenuItem item)
+    {    	    	
+    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    	// Add the buttons
+    	builder.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+    	           public void onClick(DialogInterface dialog, int id) {
+    	        	   
+    	           }
+    	       });
+    	
+    	builder.setTitle("Developers");
+    	builder.setMessage("The project is maintained as open-source by members of the Binghamton ACM Chapter.\n\nDevelopers:\n\nCheng Lin (khuang13@binghamton.edu)\n\nAnna Borovitcky (aborovi1@binghamton.edu)\n\nJames Edouard (jedouar1@binghamton.edu)\n\n\nPlease email us with bugs, fixes, or improvements you would like to see.\n\nNew project ideas or proposals are also welcome.\n\n\nContact acm.projects@binghamton.edu");
+
+    	// Create the AlertDialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    	
+    	return true;
     	
     }
         

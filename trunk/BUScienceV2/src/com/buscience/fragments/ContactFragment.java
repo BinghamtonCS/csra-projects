@@ -1,23 +1,21 @@
 package com.buscience.fragments;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URI;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
@@ -45,14 +43,14 @@ public class ContactFragment extends Fragment {
     	this.getActivity().setTitle("Contact");
     	
     	MainActivity act = ((MainActivity)(this.getActivity()));
-		act.getMDrawerList().setItemChecked(4, true);
-		act.getMDrawerList().setSelection(4);
-		act.setCurrentPosition(4);
+         act.getMDrawerList().setItemChecked(4, true);
+         act.getMDrawerList().setSelection(4);
+         act.setCurrentPosition(4);
     }
     
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) 
-    {    
+    public void onActivityCreated(Bundle savedInstanceState) {
+        
     	super.onActivityCreated(savedInstanceState);
     	
     	this.getActivity().setTitle("Contact");
@@ -60,80 +58,126 @@ public class ContactFragment extends Fragment {
 
         act.getMDrawerList().setItemChecked(4, true);
         act.getMDrawerList().setSelection(4);
-        act.setCurrentPosition(4); 
+        act.setCurrentPosition(4);
+        	        
     }
     
-    public void loadContactPage(String url)
+    public void loadContactPage(final String pageUrl)
     {
     	final ProgressBar pbar = (ProgressBar)view.findViewById(R.id.progressBar);
     	//pbar.setVisibility(ProgressBar.VISIBLE);
   
+        
         WebView web = (WebView)view.findViewById(R.id.eboard);
         web.setWebViewClient(new WebViewClient()
         {
+        	
         	@Override
-        	public void onPageFinished(WebView view, String ur)
+        	public void onPageFinished(WebView view, String url)
         	{
         		pbar.setVisibility(ProgressBar.GONE);
         	}
-        });
+        	
+        	 public boolean shouldOverrideUrlLoading(WebView view, String url)  {                  
 
-        web.loadUrl(url);
+        		 final String fUrl = url;
+        		 
+        		 if  ( url.contains("mailto:")){
+                  
+        			 AlertDialog.Builder builder = new AlertDialog.Builder(ContactFragment.this.getActivity());
+                  	// Add the buttons
+        			 
+                   	builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+           	           public void onClick(DialogInterface dialog, int id) {
+                         	Intent intent = new Intent(Intent.ACTION_VIEW);
+                         	intent.setData(Uri.parse(fUrl));
+                         	startActivity(intent);
+                         	
+                         	/*Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+                         	emailIntent.setType("text/plain");
+                         	startActivity(emailIntent); */
+           	           }
+           	       });
+                   	
+                  	builder.setNeutralButton("No", new DialogInterface.OnClickListener() {
+                  	           public void onClick(DialogInterface dialog, int id) {
+                  	        	   
+                  	           }
+                  	       });
+                  	
+                  	builder.setMessage("Would you like to send an email to " + url.replace("mailto:", "") + "?");
+
+                  	// Create the AlertDialog
+                      AlertDialog dialog = builder.create();
+                      dialog.show();
+
+                     
+        		 }
+        		 else{
+        			 view.loadUrl(url);
+
+        		 }
+        		 
+                 return true;    
+             }
+        	
+      
+        	/*@Override
+        	public WebResourceResponse shouldInterceptRequest(WebView view, String url) {
+				
+        		AlertDialog.Builder builder = new AlertDialog.Builder(ContactFragment.this.getActivity());
+            	// Add the buttons
+            	builder.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+            	           public void onClick(DialogInterface dialog, int id) {
+            	        	   
+            	           }
+            	       });
+            	
+            	builder.setMessage("BU Science is a Binghamton University Club in which our student teachers teach science and engineering concepts to elementary school students. We teach half an hour lessons once a week at George F. Johnson and Charles F. Johnson Elementary Schools in the Union-Endicott School district. ");
+
+            	// Create the AlertDialog
+                AlertDialog dialog = builder.create();
+                dialog.show();
+        		
+                
+                
+        		return true;
+        	}*/
+        	        	
+        	
+        });
+        
+        /*web.addEventListener("load",function(){
+            Ti.API.debug('The URL changed to '+web.url);
+        });*/
+
+        web.loadUrl(pageUrl);
     }
     
-	public void getEboard(String url)
-	{
-		try
-		{
-			HttpClient c = new DefaultHttpClient();
-			HttpGet get = new HttpGet();
-			get.setURI(new URI(url));
-
-			HttpResponse response = c.execute(get);
-			BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
-
-			String s;
-			while((s=in.readLine())!=null){
-				//layout.add(text field)
-				//look for eboard info
-				//frames
-				//textviews
-				//pictures
-				//email links
-			}
-			in.close();
-		}catch(Exception e){
-
-		}
-	}
-    
-    private class ContactLoader extends AsyncTask<String, Integer, String> 
-    {
-		protected String doInBackground(String... urls) 
-	    {
-			Document doc;
-			String str = "";
-			
-			try {
-				//getEboard("https://docs.google.com/document/preview?hgd=1&id=1ah8eefcuLkjBZ07CPhLgW51N2Ck6osb4E9S4KGR3pIA&pli=1");
-				//		or following two lines
-				doc = Jsoup.connect(urls[0]).get();
-				str = doc.select("iframe").attr("src");
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+    private class ContactLoader extends AsyncTask<String, Integer, String> {
+	     protected String doInBackground(String... urls) {
+				Document doc;
 				
-	        return str;
-	    }
+				String str = "";
+				
+				try {
+					doc = Jsoup.connect(urls[0]).get();
+					str = doc.select("iframe").attr("src");
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+	         return str;
+	     }
 
-	    protected void onProgressUpdate(Integer... progress) {}
+	     protected void onProgressUpdate(Integer... progress) {
 
-	    protected void onPostExecute(String result) 
-	    {
-	    	//dynamically add components to view
-	    	// 		or the follwoing
-	    	loadContactPage(result);
-	    }
-	}
+	    	 
+	     }
+
+	     protected void onPostExecute(String result) {
+	    	 loadContactPage(result);
+	     }
+  }
 }
