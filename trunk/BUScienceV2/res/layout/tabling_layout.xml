@@ -31,88 +31,96 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical" >
                     
-        <TextView
-            android:id="@+id/submissionViewer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:text="Tabling Schedule"
-            android:textColor="@color/green1"
-            android:textSize="20dp" />
+			        <TextView
+			            android:id="@+id/submissionViewer"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_alignParentLeft="true"
+			            android:layout_alignParentTop="true"
+			            android:text="Tabling Schedule"
+			            android:textColor="@color/green1"
+			            android:textSize="20dp" />
+			
+			        <View
+			            android:id="@+id/View1"
+			            android:layout_width="fill_parent"
+			            android:layout_height="1dp"
+			            android:layout_alignLeft="@+id/submissionViewer"
+			            android:layout_below="@+id/submissionViewer"
+			            android:background="@android:color/darker_gray" />
+			
+			        <TextView
+			            android:id="@+id/textView2"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_alignLeft="@+id/submissionViewer"
+			            android:layout_below="@+id/View1"
+			            android:text="BU Science is very thankful for your interest in helping with our Tabling Sessions" />
+			
+			        <View
+			            android:id="@+id/View2"
+			            android:layout_width="fill_parent"
+			            android:layout_height="1dp"
+			            android:layout_alignLeft="@+id/submissionViewer"
+			            android:layout_below="@+id/tablingSchedule"
+			            android:background="@android:color/darker_gray" />
+			
+			        <TextView
+			            android:id="@+id/textView3"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_alignLeft="@+id/submissionViewer"
+			            android:layout_below="@+id/View2"
+			            android:text="Tabling Registration" />
+			
+			        <View
+			            android:id="@+id/View3"
+			            android:layout_width="fill_parent"
+			            android:layout_height="1dp"
+			            android:layout_alignLeft="@+id/submissionViewer"
+			            android:layout_below="@+id/textView3"
+			            android:background="@android:color/darker_gray" />
 
-        <View
-            android:id="@+id/View1"
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:layout_alignLeft="@+id/submissionViewer"
-            android:layout_below="@+id/submissionViewer"
-            android:background="@android:color/darker_gray" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/submissionViewer"
-            android:layout_below="@+id/View1"
-            android:text="BU Science is very thankful for your interest in helping with our Tabling Sessions" />
-
-        <View
-            android:id="@+id/View2"
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:layout_alignLeft="@+id/submissionViewer"
-            android:layout_below="@+id/tablingSchedule"
-            android:background="@android:color/darker_gray" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/submissionViewer"
-            android:layout_below="@+id/View2"
-            android:text="Tabling Registration" />
-
-        <View
-            android:id="@+id/View3"
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:layout_alignLeft="@+id/submissionViewer"
-            android:layout_below="@+id/textView3"
-            android:background="@android:color/darker_gray" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/submissionViewer"
-            android:layout_below="@+id/View3"
-            android:text="1. Select your Name by clicking on the next available cell and clicking your Name from the List" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/submissionViewer"
-            android:layout_below="@+id/textView5"
-            android:text="-Please allow 24 hours after your online registration with BU Science for your name to show on the list."
-            android:textSize="8dp" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/submissionViewer"
-            android:layout_below="@+id/textView4"
-            android:text="2. Select the date you will be Tabling by clicking on the date cell and clicking on the desired date from the List." />
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/submissionViewer"
-            android:layout_below="@+id/textView6"
-            android:text="3. Select the one hour blocks you will table by typing an &quot;x&quot; on the times you will Table." />
+			     	<TextView
+			            android:id="@+id/textView5"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_alignLeft="@+id/submissionViewer"
+			            android:layout_below="@+id/View3"
+			            android:text="1. Switch to Registration tab on the spreedsheet." />
+			        			
+			        <TextView
+			            android:id="@+id/textView5"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_alignLeft="@+id/submissionViewer"
+			            android:layout_below="@+id/View3"
+			            android:text="2. Enter your Name by clicking on the next available cell and typing your Name to the cell." />
+			
+			        <TextView
+			            android:id="@+id/textView4"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_alignLeft="@+id/submissionViewer"
+			            android:layout_below="@+id/textView5"
+			            android:layout_marginLeft="15dp"
+			            android:text="-Please allow 24 hours after your online registration with BU Science for your name to show on the list." />
+			
+			        <TextView
+			            android:id="@+id/textView6"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_alignLeft="@+id/submissionViewer"
+			            android:layout_below="@+id/textView4"
+			            android:text="3. Enter the date you will be Tabling by typing on the date cell." />
+			
+			        <TextView
+			            android:id="@+id/textView7"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_alignLeft="@+id/submissionViewer"
+			            android:layout_below="@+id/textView6"
+			            android:text="4. Enter the one hour blocks you will table by typing an &quot;x&quot; on the times you will Table." />
                 </LinearLayout>
 
                 <LinearLayout
@@ -121,12 +129,20 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical" >
 
-        <WebView
-            android:id="@+id/tablingSchedule"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_alignLeft="@+id/submissionViewer"
-            android:layout_below="@+id/textView2" />
+			        <WebView
+			            android:id="@+id/tablingSchedule"
+			            android:layout_width="match_parent"
+			            android:layout_height="match_parent"
+			            android:layout_alignLeft="@+id/submissionViewer"
+			            android:layout_below="@+id/textView2" />
+		        
+		            <ProgressBar
+                        android:id="@+id/progTableScheduling"
+                        style="@android:style/Widget.ProgressBar.Small"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+            			android:padding="2dip" />
                 </LinearLayout>
 
             </FrameLayout>
