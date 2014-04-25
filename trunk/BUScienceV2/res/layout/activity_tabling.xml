@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tabling_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TabHost
+        android:id="@+id/tabHostTabling"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <RelativeLayout
+                    android:id="@+id/tabTablingSchedule"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <WebView
+                        android:id="@+id/webTablingSchedule"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <ProgressBar
+                        android:id="@+id/progTablingSchedule"
+                        style="@android:style/Widget.ProgressBar.Small"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+            			android:padding="2dip" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/tabTablingRegis"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <WebView
+                        android:id="@+id/webTablingRegis"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                   
+                    <ProgressBar
+                        android:id="@+id/progTablingRegis"
+                        style="@android:style/Widget.ProgressBar.Small"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+            			android:padding="2dip" />                    
+                    
+                </RelativeLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</LinearLayout>

@@ -19,29 +19,36 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+import android.widget.TabHost;
 import android.widget.TextView;
 
 public class USDriverFragment extends Fragment{
+	/**/
+	private TabHost driverTabs;
 	View view;
 	TextView driverInfo;
-	TextView driverInstructions;
 	//button "next" to go to Driver Results (which has a link back to different Driver Registration page)
 	//zoomable calendar - JSoup
+	
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		this.getActivity().setTitle("Driver's Schedule/Time Request");
-		view = inflater.inflate(R.layout.us_driver_registration, container, false);        
+		view = inflater.inflate(R.layout.us_driver_registration, container, false);
+		
+		//tabhost within a fragment
+		//driverTabs = (TabHost)findViewById(R.id.tabHostDriver);
+		driverTabs.setup();
+		driverTabs.addTab(driverTabs.newTabSpec("driverInfo").setIndicator("Driver Info").setContent(R.id.tabTablingSchedule));
+		driverTabs.addTab(driverTabs.newTabSpec("tabTablingRegis").setIndicator("Calendar").setContent(R.id.tabTablingRegis));
+		
 		new USDriverLoader().execute("http://www.buscience.org/Registration/university-student-sign-up/driver_schedule");
 
 		driverInfo = (TextView)view.findViewById(R.id.driverInfoText);
-		driverInstructions = (TextView)view.findViewById(R.id.driverInstructionsText);
 
 		driverInfo.setText("Do you own or have access to a vehicle? As a BU Science teacher and a driver you will be rewarded:" + 
 				"\n   %25 off uniform purchase." +
 				"\n   No fundraising obligations." +"\n   Early Registration." + "\n   Apply to any time slot that will fit your schedule." +
-				"\n   Be able to invite friends to your group before general registration.");
-
-		driverInstructions.setText("\nTell us what your schedule is like for this semester." +
+				"\n   Be able to invite friends to your group before general registration. \nTell us what your schedule is like for this semester." +
 				"Select a preference color and paint a time that is good for you to teach BU Science." +
 				"\n  1. Allow 15 minutes of travel before and 45 minutes of teaching and travel after " +
 				"(i.e. if you highlight 10:00 am, you will need to leave campus at 9:45 am and will come back at 10:45 am." +
@@ -70,9 +77,7 @@ public class USDriverFragment extends Fragment{
 			}
 
 		});
-		web.loadDataWithBaseURL(baseUrl, data, "text/html", "utf-8", null);
-
-
+		web.loadUrl("http://whenisgood.net/BU_Science/results/3bgnm2");
 	}
 	
 	@Override
@@ -108,12 +113,12 @@ public class USDriverFragment extends Fragment{
 
 			try {
 				Document doc = Jsoup.connect(urls[0]).get();
-				Log.e("Parse", doc.toString());
+				//Log.e("Parse", doc.toString());
 				baseUrl = doc.select("iframe[title*=Update]").attr("src");
 				Log.e("Parse2", baseUrl);
 
 				Document updatePage = Jsoup.connect(baseUrl).get();
-				Log.e("Parse3", updatePage.toString());
+				//Log.e("Parse3", updatePage.toString());
 
 				updatePage.body().attr("style", "margin-left:-10em");
 				data = updatePage.toString();
