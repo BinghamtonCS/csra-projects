@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TabHost
+        android:id="@+id/tabhostDriver"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:id="@+id/tabDriverInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+                    
+                    <TextView
+                        android:id="@+id/driverInfoText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/driverInstructionsText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TextView" />
+                    
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tabDriverSignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+                    
+                    <WebView
+                        android:id="@+id/webDriverSignUp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                    
+                   	<ProgressBar
+                        android:id="@+id/progDriverSignUp"
+                        style="@android:style/Widget.ProgressBar.Small"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+            			android:padding="2dip" />    
+                    
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tabDriverResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+                   	
+                    <WebView
+                        android:id="@+id/webDriverResult"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+                    
+                   	<ProgressBar
+                        android:id="@+id/progDriverResult"
+                        style="@android:style/Widget.ProgressBar.Small"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+            			android:padding="2dip" />   
+            			
+                   	<LinearLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:gravity="center"
+				        android:orientation="horizontal" >
+				
+					    <ImageButton
+					        android:id="@+id/ibGoBack"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content"
+					        android:layout_gravity="center"
+					        android:src="@drawable/ic_action_back" />
+				
+					</LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</LinearLayout>

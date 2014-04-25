@@ -35,16 +35,17 @@ public class USScheduleFragment extends Fragment {
     	final ProgressBar pbar = (ProgressBar)view.findViewById(R.id.progressBar);
     	
         WebView web = (WebView)view.findViewById(R.id.web_us_regi);
+		web.getSettings().setUserAgentString("Mozilla/5.0");
+		web.getSettings().setJavaScriptEnabled(true);
+		
         pbar.setVisibility(ProgressBar.VISIBLE);
         web.setWebViewClient(new WebViewClient()
         {
-        	
         	@Override
         	public void onPageFinished(WebView view, String baseUrl)
         	{
         		pbar.setVisibility(ProgressBar.GONE);
         	}
-        	
         });
         web.loadUrl(baseUrl);
     }
