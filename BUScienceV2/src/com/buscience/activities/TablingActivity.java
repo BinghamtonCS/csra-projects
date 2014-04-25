@@ -38,7 +38,7 @@ public class TablingActivity extends Activity{
 		
 		tablingTabs = (TabHost)findViewById(R.id.tablingTabs);
 		tablingTabs.setup();
-		tablingTabs.addTab(tablingTabs.newTabSpec("tabInfo").setIndicator("Information").setContent(R.id.tabInfo));
+		tablingTabs.addTab(tablingTabs.newTabSpec("tabInfo").setIndicator("Instruction").setContent(R.id.tabInfo));
 		tablingTabs.addTab(tablingTabs.newTabSpec("tabRegistration").setIndicator("Register").setContent(R.id.tabRegistration));
 		
 		webRegistration = (WebView)findViewById(R.id.tablingSchedule);
