@@ -57,7 +57,9 @@
         </activity>
         <activity
             android:name="com.buscience.activities.TablingActivity"
-            android:label="@string/title_activity_tabling" >
+            android:label="@string/title_activity_tabling"
+            android:parentActivityName="MainActivity"
+            android:theme="@style/Theme.AppCompat.Light" >
         </activity>
         <activity
             android:name="com.buscience.activities.AboutUsActivity"
