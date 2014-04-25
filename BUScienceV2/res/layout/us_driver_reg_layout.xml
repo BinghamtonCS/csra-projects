@@ -30,7 +30,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical" >
-                    
+
                     <TextView
                         android:id="@+id/driverInfoText"
                         android:layout_width="match_parent"
@@ -42,7 +42,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="TextView" />
-                    
                 </LinearLayout>
 
                 <LinearLayout
@@ -50,57 +49,56 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical" >
-                    
+
                     <WebView
                         android:id="@+id/webDriverSignUp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
-                    
-                   	<ProgressBar
+
+                    <ProgressBar
                         android:id="@+id/progDriverSignUp"
                         style="@android:style/Widget.ProgressBar.Small"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-            			android:padding="2dip" />    
-                    
+                        android:padding="2dip" />
                 </LinearLayout>
 
-                <LinearLayout
+                <RelativeLayout
                     android:id="@+id/tabDriverResult"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical" >
-                   	
+
                     <WebView
                         android:id="@+id/webDriverResult"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_toLeftOf="@+id/progDriverResult"
                         android:layout_weight="1" />
-                    
-                   	<ProgressBar
+
+                    <ProgressBar
                         android:id="@+id/progDriverResult"
                         style="@android:style/Widget.ProgressBar.Small"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
-            			android:padding="2dip" />   
-            			
-                   	<LinearLayout
-				        android:layout_width="match_parent"
-				        android:layout_height="wrap_content"
-				        android:gravity="center"
-				        android:orientation="horizontal" >
-				
-					    <ImageButton
-					        android:id="@+id/ibGoBack"
-					        android:layout_width="wrap_content"
-					        android:layout_height="wrap_content"
-					        android:layout_gravity="center"
-					        android:src="@drawable/ic_action_back" />
-				
-					</LinearLayout>
-                </LinearLayout>
+                        android:padding="2dip" />
+
+                    <ImageButton
+                        android:id="@+id/ibGoBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_gravity="bottom"
+                        android:src="@drawable/ic_action_back" />
+
+                </RelativeLayout>
             </FrameLayout>
         </LinearLayout>
     </TabHost>
