@@ -1,94 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <string name="app_name">BU Science</string>
-    <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="title_activity_home">MainActivity</string>
-    <string name="title_activity_registration">RegistrationActivity</string>
-    <string name="title_activity_certification">CertificationActivity</string>
-    <string name="title_activity_evaluation">EvaluationActivity</string>
-    <string name="title_activity_contact">ContactActivity</string>
-    <string name="title_activity_tabling">TablingActivity</string>
-    <string name="title_activity_aboutUs">AboutUsActivity</string>
-    <string name="title_activity_calendar">CalendarActivity</string>
-    <string name="title_activity_lesson">LessonActivity</string>
-    <string name="icon">ICON</string>
-    <string name="pageTitle">Eboard 2012&#8211;2013</string>
-    <string name="emailString">Email:</string>
-    <string name="majorString">Major:</string>
-    <string name="title1">President:</string>
-    <string name="name1">Brenno Varanda</string>
-    <string name="info1_1">Binghamton University</string>
-    <string name="info1_2">Watson School of Engineering</string>
-    <string name="info1_3">PhD, Mechanical Engineering</string>
-    <string name="bmail1">bvarand1@gmail.com</string>
-    <string name="title2">Vice President:</string>
-    <string name="name2">Alison Gang</string>
-    <string name="info2_1">Binghamton University</string>
-    <string name="info2_2">Watson School of Engineering</string>
-    <string name="info2_3">BSc, Mechanical Engineering</string>
-    <string name="bmail2">agang1@binghamton.edu</string>
-    <string name="title3">Secretary:</string>
-    <string name="name3">Sunitha Samuel</string>
-    <string name="info3_1">Binghamton University</string>
-    <string name="info3_2">Harpur School of Liberal Arts</string>
-    <string name="info3_3">BSc, Integrative Neuroscience</string>
-    <string name="bmail3">ssamuel3@binghamton.edu</string>
-    <string name="title4">Advisor:</string>
-    <string name="name4">Kristie Shirreffs</string>
-    <string name="info4_1">Binghamton University</string>
-    <string name="info4_2">Watson School of Engineering</string>
-    <string name="info4_3">PhD, Bioengineering</string>
-    <string name="bmail4">kristieshirreffs@gmail.com</string>
-    <string name="title5">Treasurer:</string>
-    <string name="name5">John Minami</string>
-    <string name="info5_1">Binghamton University</string>
-    <string name="info5_2">School of Management/Harpur School of Liberal Arts</string>
-    <string name="info5_3">BSc, Accounting/English (conc. in creative writing)</string>
-    <string name="bmail5">jminami1@binghamton.edu</string>
-    <string name="title6">Faculty Advisor:</string>
-    <string name="name6">Gretchen Mahler</string>
-    <string name="info6_1">Binghamton University</string>
-    <string name="info6_2">Watson School of Engineering</string>
-    <string name="info6_3">Department of Bioengineering</string>
-    <string name="bmail6">gmahler@binghamton.edu</string>
-    <string name="title7">Student Ambassador:</string>
-    <string name="name7">Andrea Wolf</string>
-    <string name="info7_1">Binghamton University</string>
-    <string name="info7_2">Harpur School of Liberal Arts</string>
-    <string name="info7_3">BSc, Biology</string>
-    <string name="bmail7">awolf1@binghamton.edu</string>
-    <string name="title8">Supply Manager:</string>
-    <string name="name8">John Varghese</string>
-    <string name="info8_1">Binghamton University</string>
-    <string name="info8_2">Harpur School of Liberal Arts</string>
-    <string name="info8_3">BSc, Integrative Neuroscience</string>
-    <string name="bmail8">jvarghe3@binghamton.edu</string>
-    <string name="title9">Supply Manager:</string>
-    <string name="name9">John Vayalumkal</string>
-    <string name="info9_1">Binghamton University</string>
-    <string name="info9_2">Harpur School of Liberal Arts</string>
-    <string name="info9_3">BSc, Integrative Neuroscience</string>
-    <string name="bmail9">jvayalu1@binghamton.edu</string>
-    <string name="about_us"><u>About Us\t</u></string>
-    <string name="join_us"><u>\tJoin Us</u></string>
-    <string name="lesson_plans"><u>Lesson Plans</u></string>
-    <string name="calendar"><u>Calendar</u></string>
-    <string name="past_lessons">Past Lessons</string>
-    <string name="fall2012">Fall 2012</string>
-    <string name="title_activity_facebook">FacebookActivity</string>
-    <string name="elementary"> &#8226; Elementary School Teacher</string>
-    <string name="university"> &#8226; University Student Teacher</string>
-    <string name="tabling"> &#8226; Tabling</string>
-    <string name="evaluation_page_title">Student/Teacher Evaluation</string>
-    <string name="certification_button">Certification Questions</string>
-    <string name="slideshow_button">Return to Slideshow</string>
-    <string name="regi_title">Registration</string>
-    <string name="cert_title">Certification</string>
-    <string name="eval_title">Evaluation</string>
-    <string name="cont_title">Contact</string>
-    <string name="home_title">Home</string>
+    <string name="app_name" translatable="false">BU Science</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="hello_world"  translatable="false">Hello world!</string>
+    <string name="title_activity_home" translatable="false">MainActivity</string>
+    <string name="title_activity_registration" translatable="false">RegistrationActivity</string>
+    <string name="title_activity_certification" translatable="false">CertificationActivity</string>
+    <string name="title_activity_evaluation" translatable="false">EvaluationActivity</string>
+    <string name="title_activity_contact" translatable="false">ContactActivity</string>
+    <string name="title_activity_tabling" translatable="false">TablingActivity</string>
+    <string name="title_activity_aboutUs" translatable="false">AboutUsActivity</string>
+    <string name="title_activity_calendar" translatable="false">CalendarActivity</string>
+    <string name="title_activity_lesson" translatable="false">LessonActivity</string>
+    <string name="icon" translatable="false">ICON</string>
+    <string name="pageTitle" translatable="false">Eboard 2012&#8211;2013</string>
+    <string name="emailString" translatable="false">Email:</string>
+    <string name="majorString" translatable="false">Major:</string>
+    <string name="title1" translatable="false">President:</string>
+    <string name="name1" translatable="false">Brenno Varanda</string>
+    <string name="info1_1" translatable="false">Binghamton University</string>
+    <string name="info1_2" translatable="false">Watson School of Engineering</string>
+    <string name="info1_3" translatable="false">PhD, Mechanical Engineering</string>
+    <string name="bmail1" translatable="false">bvarand1@gmail.com</string>
+    <string name="title2" translatable="false">Vice President:</string>
+    <string name="name2" translatable="false">Alison Gang</string>
+    <string name="info2_1" translatable="false">Binghamton University</string>
+    <string name="info2_2" translatable="false">Watson School of Engineering</string>
+    <string name="info2_3" translatable="false">BSc, Mechanical Engineering</string>
+    <string name="bmail2" translatable="false">agang1@binghamton.edu</string>
+    <string name="title3" translatable="false">Secretary:</string>
+    <string name="name3" translatable="false">Sunitha Samuel</string>
+    <string name="info3_1" translatable="false">Binghamton University</string>
+    <string name="info3_2" translatable="false">Harpur School of Liberal Arts</string>
+    <string name="info3_3" translatable="false">BSc, Integrative Neuroscience</string>
+    <string name="bmail3" translatable="false">ssamuel3@binghamton.edu</string>
+    <string name="title4" translatable="false">Advisor:</string>
+    <string name="name4" translatable="false">Kristie Shirreffs</string>
+    <string name="info4_1" translatable="false">Binghamton University</string>
+    <string name="info4_2" translatable="false">Watson School of Engineering</string>
+    <string name="info4_3" translatable="false">PhD, Bioengineering</string>
+    <string name="bmail4" translatable="false">kristieshirreffs@gmail.com</string>
+    <string name="title5" translatable="false">Treasurer:</string>
+    <string name="name5" translatable="false">John Minami</string>
+    <string name="info5_1" translatable="false">Binghamton University</string>
+    <string name="info5_2" translatable="false">School of Management/Harpur School of Liberal Arts</string>
+    <string name="info5_3" translatable="false">BSc, Accounting/English (conc. in creative writing)</string>
+    <string name="bmail5" translatable="false">jminami1@binghamton.edu</string>
+    <string name="title6" translatable="false">Faculty Advisor:</string>
+    <string name="name6" translatable="false">Gretchen Mahler</string>
+    <string name="info6_1" translatable="false">Binghamton University</string>
+    <string name="info6_2" translatable="false">Watson School of Engineering</string>
+    <string name="info6_3" translatable="false">Department of Bioengineering</string>
+    <string name="bmail6" translatable="false">gmahler@binghamton.edu</string>
+    <string name="title7" translatable="false">Student Ambassador:</string>
+    <string name="name7" translatable="false">Andrea Wolf</string>
+    <string name="info7_1" translatable="false">Binghamton University</string>
+    <string name="info7_2" translatable="false">Harpur School of Liberal Arts</string>
+    <string name="info7_3" translatable="false">BSc, Biology</string>
+    <string name="bmail7" translatable="false">awolf1@binghamton.edu</string>
+    <string name="title8" translatable="false">Supply Manager:</string>
+    <string name="name8" translatable="false">John Varghese</string>
+    <string name="info8_1" translatable="false">Binghamton University</string>
+    <string name="info8_2" translatable="false">Harpur School of Liberal Arts</string>
+    <string name="info8_3" translatable="false">BSc, Integrative Neuroscience</string>
+    <string name="bmail8" translatable="false">jvarghe3@binghamton.edu</string>
+    <string name="title9" translatable="false">Supply Manager:</string>
+    <string name="name9" translatable="false">John Vayalumkal</string>
+    <string name="info9_1" translatable="false">Binghamton University</string>
+    <string name="info9_2" translatable="false">Harpur School of Liberal Arts</string>
+    <string name="info9_3" translatable="false">BSc, Integrative Neuroscience</string>
+    <string name="bmail9" translatable="false">jvayalu1@binghamton.edu</string>
+    <string name="about_us" translatable="false"><u>About Us\t</u></string>
+    <string name="join_us" translatable="false"><u>\tJoin Us</u></string>
+    <string name="lesson_plans" translatable="false"><u>Lesson Plans</u></string>
+    <string name="calendar" translatable="false"><u>Calendar</u></string>
+    <string name="past_lessons" translatable="false">Past Lessons</string>
+    <string name="fall2012" translatable="false">Fall 2012</string>
+    <string name="title_activity_facebook" translatable="false">FacebookActivity</string>
+    <string name="elementary" translatable="false"> &#8226; Elementary School Teacher</string>
+    <string name="university" translatable="false"> &#8226; University Student Teacher</string>
+    <string name="tabling" translatable="false"> &#8226; Tabling</string>
+    <string name="evaluation_page_title" translatable="false">Student/Teacher Evaluation</string>
+    <string name="certification_button" translatable="false">Certification Questions</string>
+    <string name="slideshow_button" translatable="false">Return to Slideshow</string>
+    <string name="regi_title" translatable="false">Registration</string>
+    <string name="cert_title" translatable="false">Certification</string>
+    <string name="eval_title" translatable="false">Evaluation</string>
+    <string name="cont_title" translatable="false">Contact</string>
+    <string name="home_title" translatable="false">Home</string>
 
     <!-- Nav Drawer List Item Icons -->
     <!-- Keep them in order as the titles are in -->
@@ -101,7 +101,7 @@
     </array>
 
     <!-- Content Description -->
-    <string name="desc_list_item_icon">Item Icon</string>
-    <string name="title_activity_school_teacher">Elementary Teacher Registration</string>
+    <string name="desc_list_item_icon" translatable="false">Item Icon</string>
+    <string name="title_activity_school_teacher" translatable="false">Elementary Teacher Registration</string>
 
 </resources>
