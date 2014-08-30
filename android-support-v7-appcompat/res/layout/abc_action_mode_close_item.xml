@@ -18,6 +18,7 @@
               android:id="@+id/action_mode_close_button"
               android:focusable="true"
               android:clickable="true"
+              android:paddingRight="0dip"
               android:paddingLeft="8dip"
               android:contentDescription="@string/abc_action_mode_done"
               style="?attr/actionModeCloseButtonStyle"
